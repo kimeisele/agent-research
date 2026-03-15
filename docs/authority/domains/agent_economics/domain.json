@@ -1,0 +1,16 @@
+{
+  "domain_id": "agent_economics",
+  "name": "Agent Economics",
+  "core_question": "How should resources be allocated in a federation where no central planner exists?",
+  "description": "Resource allocation, cost of computation, budget constraints, multi-LLM failover economics, API cost optimization. The economy of cognitive agents.",
+  "human_world_bridge": "Agent economics directly mirrors resource allocation problems in human economies. How do you distribute scarce resources (API calls, compute, attention) across competing needs without a central planner? The same question applies to healthcare budgets, energy grids, and public goods.",
+  "research_axes": [
+    "Cognitive redundancy under budget constraints (multi-LLM failover cost)",
+    "Resource sharing across federation nodes",
+    "Cost-benefit analysis of research depth vs. speed",
+    "Tragedy of the commons in shared federation infrastructure",
+    "Pricing mechanisms for inter-node services"
+  ],
+  "active_inquiries": [],
+  "accumulated_concepts": []
+}

@@ -1,0 +1,60 @@
+name: Validate Federation Node
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate federation node
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/validate_federation.py
+
+      - name: Test authority feed export
+        run: |
+          python scripts/export_authority_feed.py --output-dir /tmp/authority-feed-test
+          echo "--- Authority Feed Manifest ---"
+          python -c "
+          import json
+          m = json.load(open('/tmp/authority-feed-test/latest-authority-manifest.json'))
+          print(f\"Source: {m['source_repo_id']}\")
+          print(f\"SHA: {m['source_sha']}\")
+          print(f\"Artifacts: {len(m['artifacts'])}\")
+          b = json.load(open('/tmp/authority-feed-test/' + m['bundle']['path']))
+          print(f\"Documents: {b['document_count']}\")
+          print(f\"Faculties: {b['faculties']}\")
+          print(f\"Role: {b['repo_role']['role']}\")
+          "
+
+      - name: Validate descriptor regeneration
+        run: |
+          python scripts/render_federation_descriptor.py --output /tmp/test-descriptor.json
+          python -c "
+          import json
+          d = json.load(open('/tmp/test-descriptor.json'))
+          assert d['kind'] == 'agent_federation_descriptor', f\"Wrong kind: {d['kind']}\"
+          assert d['node_role'] == 'research_engine_faculty', f\"Wrong role: {d['node_role']}\"
+          assert 'faculties' in d, 'Missing faculties'
+          assert 'capabilities' in d, 'Missing capabilities'
+          print('Descriptor validation passed')
+          print(f\"  Node: {d['display_name']}\")
+          print(f\"  Role: {d['node_role']}\")
+          print(f\"  Faculties: {len(d['faculties'])}\")
+          print(f\"  Capabilities: {len(d['capabilities'])}\")
+          "
