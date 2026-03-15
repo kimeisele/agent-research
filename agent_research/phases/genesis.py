@@ -16,7 +16,10 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+from agent_research.knowledge import KnowledgeGraph
 from agent_research.models import Inquiry, InquirySource, InquiryUrgency
+from agent_research.peer_review import PeerReviewScanner, ReviewVerdict
+from agent_research.nadi import NadiTransport
 
 logger = logging.getLogger(__name__)
 
@@ -172,6 +175,30 @@ class MeshObserver:
         return inquiries
 
 
+class KnowledgeGraphScanner:
+    """Scan the knowledge graph for unanswered questions from prior research.
+
+    This is how the Faculty REMEMBERS: questions that emerged from previous
+    research become new inquiries. The research feeds itself.
+    """
+
+    def __init__(self, knowledge: KnowledgeGraph):
+        self.knowledge = knowledge
+
+    def scan(self) -> list[Inquiry]:
+        inquiries = []
+        for oq in self.knowledge.get_unanswered_questions():
+            inquiries.append(Inquiry(
+                question=oq.question,
+                context=f"Emerged from prior research (inquiry {oq.parent_inquiry})",
+                source=InquirySource.CURIOSITY,
+                domains=oq.domains,
+                urgency=InquiryUrgency.STANDARD,
+                metadata={"origin": "knowledge_graph", "parent_inquiry": oq.parent_inquiry},
+            ))
+        return inquiries
+
+
 class CuriosityEngine:
     """Generate research questions from cross-domain analysis.
 
@@ -237,6 +264,69 @@ class CuriosityEngine:
         return inquiries
 
 
+class PeerChallengeScanner:
+    """Scan incoming peer reviews for research challenges.
+
+    When a peer challenges or refutes our findings, that becomes
+    a new research inquiry. The challenged claim needs re-investigation.
+    """
+
+    def __init__(self, token: str | None = None):
+        self.scanner = PeerReviewScanner(NadiTransport(token))
+
+    def scan(self) -> list[Inquiry]:
+        try:
+            reviews = self.scanner.scan()
+        except Exception as e:
+            logger.warning("Peer challenge scan failed: %s", e)
+            return []
+
+        inquiries = []
+        for review in reviews:
+            # Only challenges and refutations generate new inquiries
+            if review.verdict not in (ReviewVerdict.CHALLENGE, ReviewVerdict.REFUTE):
+                continue
+
+            for challenge in review.challenges:
+                inquiries.append(Inquiry(
+                    question=f"Re-examine: {challenge}",
+                    context=(
+                        f"Peer review from {review.reviewer_node} "
+                        f"({review.verdict.value}) of inquiry {review.inquiry_id}: "
+                        f"{review.summary}"
+                    ),
+                    source=InquirySource.PEER_CHALLENGE,
+                    source_node=review.reviewer_node,
+                    domains=[],
+                    urgency=InquiryUrgency.ELEVATED,
+                    metadata={
+                        "review_id": review.review_id,
+                        "original_inquiry": review.inquiry_id,
+                        "verdict": review.verdict.value,
+                        "counter_evidence": review.counter_evidence,
+                    },
+                ))
+
+            # If refutation but no specific challenges, create one general inquiry
+            if review.verdict == ReviewVerdict.REFUTE and not review.challenges:
+                inquiries.append(Inquiry(
+                    question=f"Re-examine findings of {review.inquiry_id}: {review.summary}",
+                    context=(
+                        f"Peer refutation from {review.reviewer_node}. "
+                        f"Counter-evidence: {'; '.join(review.counter_evidence)}"
+                    ),
+                    source=InquirySource.PEER_CHALLENGE,
+                    source_node=review.reviewer_node,
+                    urgency=InquiryUrgency.ELEVATED,
+                    metadata={
+                        "review_id": review.review_id,
+                        "original_inquiry": review.inquiry_id,
+                    },
+                ))
+
+        return inquiries
+
+
 class GenesisPhase:
     """GENESIS: Discover all pending research questions.
 
@@ -248,10 +338,13 @@ class GenesisPhase:
         self.repo_root = repo_root
         self.data_dir = repo_root / "data"
         self.docs_dir = repo_root / "docs"
+        self.knowledge = KnowledgeGraph(self.data_dir / "knowledge_graph.json")
         self.scanners = [
             InboxScanner(self.data_dir),
             IssueScanner(token),
             MeshObserver(self.data_dir),
+            PeerChallengeScanner(token),
+            KnowledgeGraphScanner(self.knowledge),
             CuriosityEngine(self.docs_dir),
         ]
         self.ledger_path = self.data_dir / "inquiry_ledger.json"
