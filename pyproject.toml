@@ -1,0 +1,16 @@
+[project]
+name = "agent-research"
+version = "0.1.0"
+description = "Research Engine & Faculty of Agent Universe — multidisciplinary federation research node"
+requires-python = ">=3.11"
+license = "MIT"
+
+[project.scripts]
+agent-research = "agent_research.cli:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools.packages.find]
+include = ["agent_research*"]

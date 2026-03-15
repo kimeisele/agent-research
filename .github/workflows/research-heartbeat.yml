@@ -1,0 +1,59 @@
+name: Research Engine Heartbeat
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # Every 15 minutes, synced with federation relay
+  workflow_dispatch:
+    inputs:
+      max_inquiries:
+        description: "Max inquiries to process per cycle"
+        required: false
+        default: "5"
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  research-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run research engine cycle
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MAX="${{ github.event.inputs.max_inquiries || '5' }}"
+          echo "Running research engine cycle (max: $MAX inquiries)"
+          python -m agent_research.cli run-cycle --max "$MAX" -v
+
+      - name: Show engine status
+        run: python -m agent_research.cli status
+
+      - name: Commit results
+        run: |
+          git config user.name "research-engine-bot"
+          git config user.email "bot@agent-research"
+
+          # Stage research outputs
+          git add -A data/ docs/authority/research_results/ .authority-feed-out/ || true
+
+          if git diff --cached --quiet; then
+            echo "No new research results to commit"
+            exit 0
+          fi
+
+          INQUIRY_COUNT=$(git diff --cached --name-only | grep -c "research_results/" || echo "0")
+          git commit -m "Research cycle: ${INQUIRY_COUNT} result(s) published
+
+          Automated research engine heartbeat.
+          Cycle triggered at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push origin HEAD:${GITHUB_REF_NAME}
