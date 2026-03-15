@@ -79,8 +79,8 @@ class ResearchEngine:
         self.max_per_cycle = max_per_cycle
         self.genesis_phase = GenesisPhase(repo_root, token)
         self.dharma_phase = DharmaPhase(repo_root)
-        self.karma_phase = KarmaPhase(repo_root)
-        self.moksha_phase = MokshaPhase(repo_root)
+        self.karma_phase = KarmaPhase(repo_root, token)
+        self.moksha_phase = MokshaPhase(repo_root, token)
         self.history_path = repo_root / "data" / "cycle_history.json"
 
     def genesis(self) -> list[Inquiry]:
