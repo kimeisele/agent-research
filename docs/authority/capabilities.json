@@ -1,0 +1,101 @@
+{
+  "kind": "agent_capability_manifest",
+  "version": 1,
+  "node_id": "agent-research",
+  "node_role": "research_engine_faculty",
+  "display_name": "Research Engine & Faculty of Agent Universe",
+  "description": "Multidisciplinary research institution serving the federation with open knowledge production, synthesis, and cross-domain analysis.",
+  "faculties": [
+    {
+      "id": "energy-sustainability",
+      "name": "Energy & Sustainability",
+      "domains": ["energy-efficiency", "renewables", "thermodynamics", "circular-economy", "sustainable-infrastructure"]
+    },
+    {
+      "id": "health-medicine",
+      "name": "Health & Medicine",
+      "domains": ["medical-research", "epidemiology", "nutrition", "mental-health", "cognitive-science", "drug-interactions"]
+    },
+    {
+      "id": "physics-fundamental",
+      "name": "Physics & Fundamental Science",
+      "domains": ["quantum-mechanics", "cosmology", "materials-science", "complex-systems", "emergence"]
+    },
+    {
+      "id": "computation-intelligence",
+      "name": "Computation & Intelligence",
+      "domains": ["agent-architecture", "federation-protocols", "distributed-systems", "ml-theory", "information-theory", "ai-safety"]
+    },
+    {
+      "id": "biology-ecology",
+      "name": "Biology & Ecology",
+      "domains": ["ecosystem-modeling", "genetics", "synthetic-biology", "climate-science", "biodiversity"]
+    },
+    {
+      "id": "philosophy-ethics",
+      "name": "Philosophy & Ethics",
+      "domains": ["autonomous-systems-ethics", "epistemology", "philosophy-of-science", "digital-rights", "information-ethics"]
+    },
+    {
+      "id": "cross-domain",
+      "name": "Cross-Domain Research",
+      "domains": ["biomimicry", "psychoneuroimmunology", "quantum-biology", "complexity-science"]
+    }
+  ],
+  "capabilities": {
+    "research_synthesis": {
+      "description": "Synthesize findings across multiple sources and domains into structured authority documents",
+      "input": "research_question",
+      "output": "authority_document"
+    },
+    "cross_domain_analysis": {
+      "description": "Identify patterns and connections across different research domains",
+      "input": "domain_observations",
+      "output": "cross_domain_report"
+    },
+    "meta_analysis": {
+      "description": "Aggregate and analyze findings from multiple studies or data sources",
+      "input": "study_collection",
+      "output": "meta_analysis_report"
+    },
+    "methodology_review": {
+      "description": "Evaluate and improve research methodologies",
+      "input": "methodology_description",
+      "output": "methodology_assessment"
+    },
+    "open_inquiry": {
+      "description": "Accept research questions from any federation node and produce findings",
+      "input": "inquiry_request",
+      "output": "inquiry_response"
+    }
+  },
+  "federation_interfaces": {
+    "produces": [
+      "authority_document",
+      "research_synthesis",
+      "cross_domain_report",
+      "meta_analysis_report",
+      "methodology_guide",
+      "open_dataset"
+    ],
+    "consumes": [
+      "research_question",
+      "raw_data_feed",
+      "domain_observation",
+      "inquiry_request",
+      "peer_review_challenge"
+    ],
+    "protocols": [
+      "authority_feed_v1",
+      "open_inquiry_v1",
+      "peer_review_v1"
+    ]
+  },
+  "values": {
+    "gemeinnuetzigkeit": "Knowledge belongs to everyone — common good above all",
+    "rigor": "Love for logic means love for truth",
+    "interdisciplinarity": "Reality doesn't respect field boundaries — neither do we",
+    "transparency": "Every method, source, and reasoning chain is open",
+    "humility": "We name what we don't know and correct what we got wrong"
+  }
+}

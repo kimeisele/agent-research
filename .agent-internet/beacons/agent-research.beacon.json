@@ -1,0 +1,30 @@
+{
+  "kind": "federation_beacon",
+  "version": 1,
+  "city_id": "agent-research",
+  "display_name": "Research Engine & Faculty of Agent Universe",
+  "node_role": "research_engine_faculty",
+  "announced_at": "2026-03-15T14:31:42.780752+00:00",
+  "capabilities": [
+    "research_synthesis",
+    "cross_domain_analysis",
+    "meta_analysis",
+    "methodology_review",
+    "open_inquiry"
+  ],
+  "faculties": [
+    "energy-sustainability",
+    "health-medicine",
+    "physics-fundamental",
+    "computation-intelligence",
+    "biology-ecology",
+    "philosophy-ethics",
+    "cross-domain"
+  ],
+  "transport": {
+    "scheme": "https",
+    "location": "https://raw.githubusercontent.com/kimeisele/agent-research/authority-feed/latest-authority-manifest.json"
+  },
+  "descriptor_url": "https://raw.githubusercontent.com/kimeisele/agent-research/main/.well-known/agent-federation.json",
+  "ttl_seconds": 86400
+}

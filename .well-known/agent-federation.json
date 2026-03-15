@@ -1,12 +1,55 @@
 {
   "kind": "agent_federation_descriptor",
-  "version": 1,
+  "version": 2,
   "repo_id": "agent-research",
-  "display_name": "Agent Research",
+  "display_name": "Research Engine & Faculty of Agent Universe",
+  "description": "Multidisciplinary research institution serving the federation with open knowledge production, synthesis, and cross-domain analysis.",
+  "node_role": "research_engine_faculty",
   "authority_feed_manifest_url": "https://raw.githubusercontent.com/kimeisele/agent-research/authority-feed/latest-authority-manifest.json",
   "projection_intents": [
-    "public_authority_page"
+    "public_authority_page",
+    "research_synthesis",
+    "open_inquiry",
+    "cross_domain_analysis"
   ],
   "status": "active",
-  "owner_boundary": "agent_research_surface"
+  "owner_boundary": "agent_research_surface",
+  "faculties": [
+    "energy-sustainability",
+    "health-medicine",
+    "physics-fundamental",
+    "computation-intelligence",
+    "biology-ecology",
+    "philosophy-ethics",
+    "cross-domain"
+  ],
+  "capabilities": [
+    "research_synthesis",
+    "cross_domain_analysis",
+    "meta_analysis",
+    "methodology_review",
+    "open_inquiry"
+  ],
+  "federation_interfaces": {
+    "produces": [
+      "authority_document",
+      "research_synthesis",
+      "cross_domain_report",
+      "meta_analysis_report",
+      "methodology_guide",
+      "open_dataset"
+    ],
+    "consumes": [
+      "research_question",
+      "raw_data_feed",
+      "domain_observation",
+      "inquiry_request",
+      "peer_review_challenge"
+    ],
+    "protocols": [
+      "authority_feed_v1",
+      "open_inquiry_v1",
+      "peer_review_v1"
+    ]
+  }
 }
