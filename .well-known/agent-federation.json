@@ -1,12 +1,12 @@
 {
   "kind": "agent_federation_descriptor",
   "version": 1,
-  "repo_id": "agent-template",
-  "display_name": "Agent Template",
-  "authority_feed_manifest_url": "https://raw.githubusercontent.com/kimeisele/agent-template/authority-feed/latest-authority-manifest.json",
+  "repo_id": "agent-research",
+  "display_name": "Agent Research",
+  "authority_feed_manifest_url": "https://raw.githubusercontent.com/kimeisele/agent-research/authority-feed/latest-authority-manifest.json",
   "projection_intents": [
     "public_authority_page"
   ],
   "status": "active",
-  "owner_boundary": "agent_template_surface"
+  "owner_boundary": "agent_research_surface"
 }
