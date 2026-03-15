@@ -231,13 +231,20 @@ class MokshaPhase:
     def _get_review_peers(self, inquiry: Inquiry) -> list[str]:
         """Determine which federation peers should review this result.
 
-        Peers are selected based on:
-        - Nodes with overlapping capabilities
-        - The source node (if it came from federation)
-        - Known active federation nodes
+        Uses dynamic discovery via GitHub topic search to find all active
+        federation nodes, then filters by relevance. Falls back to known
+        founding nodes if discovery fails.
         """
-        # Always request from steward and agent-world if they exist
-        candidates = {"steward", "agent-world", "agent-city"}
+        candidates: set[str] = set()
+
+        # Dynamic discovery: find all repos tagged agent-federation-node
+        try:
+            discovered = self._discover_federation_peers()
+            candidates.update(discovered)
+        except Exception as e:
+            logger.warning("  Peer discovery failed, using founding nodes: %s", e)
+            # Fallback: founding nodes that are always part of the federation
+            candidates = {"steward", "agent-world", "agent-city"}
 
         # Don't request review from the source node (they asked the question)
         if inquiry.source_node:
@@ -247,6 +254,42 @@ class MokshaPhase:
         candidates.discard("agent-research")
 
         return list(candidates)
+
+    def _discover_federation_peers(self) -> set[str]:
+        """Discover federation peers via GitHub topic search.
+
+        Searches for repos tagged 'agent-federation-node' owned by kimeisele.
+        Returns repo names (not full paths) for nadi transport compatibility.
+        """
+        import urllib.request
+        import json as _json
+
+        token = self.nadi.token
+        if not token:
+            return set()
+
+        url = (
+            "https://api.github.com/search/repositories"
+            "?q=topic:agent-federation-node+user:kimeisele+archived:false+fork:false"
+            "&per_page=50&sort=updated"
+        )
+        req = urllib.request.Request(url, headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+        })
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = _json.loads(resp.read())
+
+        peers: set[str] = set()
+        for item in data.get("items", []):
+            name = item.get("name", "")
+            if name and not item.get("archived"):
+                peers.add(name)
+
+        if peers:
+            logger.info("  Discovered %d federation peers: %s", len(peers), sorted(peers))
+
+        return peers
 
     def _process_incoming_reviews(self) -> None:
         """Scan for and process incoming peer reviews."""

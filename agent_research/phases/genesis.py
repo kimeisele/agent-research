@@ -64,7 +64,19 @@ class InboxScanner:
 
 
 class IssueScanner:
-    """Scan GitHub issues for research inquiries."""
+    """Scan GitHub issues for research inquiries AND federation responses.
+
+    Scans multiple label sets:
+    - research-inquiry: explicit research requests
+    - federation-nadi: any federation message (results, reviews, responses)
+    - research-result: completed research from peer nodes
+
+    This ensures the feedback loop is complete: when a peer node responds
+    to our Nadi messages, GENESIS discovers it and feeds it back into the cycle.
+    """
+
+    # Labels to scan — each represents a different federation signal
+    SCAN_LABELS = ("research-inquiry", "federation-nadi", "research-result")
 
     def __init__(self, token: str | None = None):
         self.token = token or os.environ.get("GITHUB_TOKEN", "")
@@ -87,43 +99,85 @@ class IssueScanner:
             return []
 
     def scan(self) -> list[Inquiry]:
-        issues = self._github_api(
-            f"/repos/{REPO_OWNER}/{REPO_NAME}/issues?labels=research-inquiry&state=open&per_page=50"
-        )
-        if not isinstance(issues, list):
-            return []
-
+        seen_numbers: set[int] = set()
         inquiries = []
-        for issue in issues:
-            body = issue.get("body", "") or ""
-            # Parse structured inquiry from issue body
-            question = issue.get("title", "")
-            domains = [
-                label["name"].removeprefix("faculty:")
-                for label in issue.get("labels", [])
-                if label.get("name", "").startswith("faculty:")
-            ]
-            urgency = InquiryUrgency.STANDARD
-            for label in issue.get("labels", []):
-                name = label.get("name", "")
-                if name == "urgency:elevated":
-                    urgency = InquiryUrgency.ELEVATED
-                elif name == "urgency:critical":
-                    urgency = InquiryUrgency.CRITICAL
 
-            inquiry = Inquiry(
-                inquiry_id=f"gh-{issue['number']}",
-                question=question,
-                context=body,
-                source=InquirySource.GITHUB_ISSUE,
-                source_node=issue.get("user", {}).get("login", ""),
-                domains=domains,
-                urgency=urgency,
-                metadata={"issue_number": issue["number"], "issue_url": issue.get("html_url", "")},
+        for label in self.SCAN_LABELS:
+            issues = self._github_api(
+                f"/repos/{REPO_OWNER}/{REPO_NAME}/issues"
+                f"?labels={label}&state=open&per_page=30"
             )
-            inquiries.append(inquiry)
+            if not isinstance(issues, list):
+                continue
+
+            for issue in issues:
+                num = issue.get("number", 0)
+                if num in seen_numbers:
+                    continue
+                seen_numbers.add(num)
+
+                inquiry = self._issue_to_inquiry(issue, label)
+                if inquiry:
+                    inquiries.append(inquiry)
 
         return inquiries
+
+    def _issue_to_inquiry(self, issue: dict, primary_label: str) -> Inquiry | None:
+        """Convert a GitHub issue to an Inquiry, adapting to the label type."""
+        body = issue.get("body", "") or ""
+        title = issue.get("title", "")
+        labels = {l.get("name", "") for l in issue.get("labels", [])}
+
+        # Determine source based on labels
+        if "federation-nadi" in labels or "research-result" in labels:
+            source = InquirySource.FEDERATION_INBOX
+        else:
+            source = InquirySource.GITHUB_ISSUE
+
+        # Extract domains from faculty: labels
+        domains = [
+            l.removeprefix("faculty:")
+            for l in labels
+            if l.startswith("faculty:")
+        ]
+
+        # Parse urgency
+        urgency = InquiryUrgency.STANDARD
+        if "urgency:elevated" in labels:
+            urgency = InquiryUrgency.ELEVATED
+        elif "urgency:critical" in labels:
+            urgency = InquiryUrgency.CRITICAL
+
+        # For federation results, frame as follow-up research
+        if "research-result" in labels:
+            question = f"Integrate federation result: {title}"
+        elif title.startswith("[research-result]"):
+            question = f"Integrate: {title.removeprefix('[research-result]').strip()}"
+        elif title.startswith("[research-inquiry]"):
+            question = title.removeprefix("[research-inquiry]").strip()
+        else:
+            question = title
+
+        if not question:
+            return None
+
+        # Determine source node from issue creator or body parsing
+        source_node = issue.get("user", {}).get("login", "")
+
+        return Inquiry(
+            inquiry_id=f"gh-{issue['number']}",
+            question=question,
+            context=body,
+            source=source,
+            source_node=source_node,
+            domains=domains,
+            urgency=urgency,
+            metadata={
+                "issue_number": issue["number"],
+                "issue_url": issue.get("html_url", ""),
+                "primary_label": primary_label,
+            },
+        )
 
 
 class MeshObserver:
