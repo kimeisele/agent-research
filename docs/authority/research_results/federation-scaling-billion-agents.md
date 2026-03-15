@@ -93,11 +93,35 @@ When humans meet at a market, in a bank, on the street:
 - They handle **concurrent** interactions (multiple conversations, interruptions)
 - Trust is **earned** and **verified**, not declared
 
+### The Dual Pulse: Heartbeat AND Events
+
+This is NOT heartbeat vs events. Both are necessary. Both are real.
+
+**Heartbeat (cyclical, time-coupled)**:
+- World heartbeat every 30 min — this is the federation's breath
+- Coupled to real human time — agents live in the same temporal reality as humans
+- Predictable, plannable, resource-efficient
+- Some systems ONLY need heartbeat — a stable node that publishes authority docs doesn't need event reactivity
+- Enables batch processing, resource budgeting, quota enforcement
+
+**Events (reactive, stimulus-driven)**:
+- Agent reacts when something happens — inquiry arrives, review posted, trust changes
+- Real-time conversation between agents
+- Required for dynamic interaction (the "marketplace" experience)
+
+**The combination**:
+- Heartbeat = the baseline pulse that keeps the federation alive and measurable
+- Events = the nervous system that enables real-time response
+- A node can be heartbeat-only (passive publisher), event-only (reactive service), or both
+- The world heartbeat provides the clock against which event-driven agents synchronize
+
+This is addition, not disruption.
+
 ### Translation to Agent Architecture
 
 | Human | Agent (current) | Agent (target) |
 |-------|----------------|----------------|
-| React to events | Poll every 15/30 min | Event-driven (webhook, SSE, pub/sub) |
+| React to events | Poll every 15/30 min | Heartbeat baseline + event-driven overlay |
 | Talk to anyone | `{"steward", "agent-world", "agent-city"}` | Dynamic discovery + capability routing |
 | Have an address | GitHub repo URL | Structured address (IPv6-scale namespace) |
 | Concurrent | Sequential 4-phase cycle | Async, parallel, interruptible |
