@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": 1,
-    "total_ingestions": 5
+    "total_ingestions": 7
   },
   "concepts": [
     {
@@ -191,9 +191,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:05.994764+00:00",
-      "mention_count": 3,
+      "mention_count": 4,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -351,9 +352,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:05.994764+00:00",
-      "mention_count": 1,
+      "mention_count": 2,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -415,9 +417,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:05.994764+00:00",
-      "mention_count": 2,
+      "mention_count": 3,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -431,9 +434,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:05.994764+00:00",
-      "mention_count": 1,
+      "mention_count": 2,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -607,9 +611,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:05.994764+00:00",
-      "mention_count": 1,
+      "mention_count": 2,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -1007,9 +1012,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:06.003127+00:00",
-      "mention_count": 1,
+      "mention_count": 3,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -1071,9 +1077,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:06.003127+00:00",
-      "mention_count": 2,
+      "mention_count": 3,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -1135,9 +1142,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:06.003127+00:00",
-      "mention_count": 1,
+      "mention_count": 2,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -1777,9 +1785,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:06.045869+00:00",
-      "mention_count": 1,
+      "mention_count": 2,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -1987,9 +1996,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:06.045869+00:00",
-      "mention_count": 1,
+      "mention_count": 2,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -2029,9 +2039,10 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:06.045869+00:00",
-      "mention_count": 1,
+      "mention_count": 2,
       "source_inquiries": [
-        "wcfa-001"
+        "wcfa-001",
+        "wcfa-001-rev2"
       ]
     },
     {
@@ -2046,6 +2057,314 @@
       "mention_count": 1,
       "source_inquiries": [
         "wcfa-001"
+      ]
+    },
+    {
+      "id": "finds",
+      "label": "finds",
+      "domains": [
+        "agent_governance",
+        "agent_health"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.292762+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "rediscover",
+      "label": "rediscover",
+      "domains": [
+        "agent_governance",
+        "agent_health"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.292762+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "mortem",
+      "label": "mortem",
+      "domains": [
+        "agent_governance",
+        "agent_health"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.292762+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "audit",
+      "label": "audit",
+      "domains": [
+        "agent_governance",
+        "agent_health"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.292762+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "phase",
+      "label": "phase",
+      "domains": [
+        "agent_governance",
+        "agent_health"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.292762+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "5-phase-cycle",
+      "label": "5-phase cycle",
+      "domains": [
+        "agent_governance",
+        "agent_health"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.292762+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "rediscovery-phase",
+      "label": "rediscovery phase",
+      "domains": [
+        "agent_governance",
+        "agent_health"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.292762+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "rediscovery",
+      "label": "rediscovery",
+      "domains": [
+        "agent_governance",
+        "agent_health"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.292762+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "itself",
+      "label": "itself",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "became",
+      "label": "became",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "exercise",
+      "label": "exercise",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "preventing",
+      "label": "preventing",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "subject",
+      "label": "subject",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "checkbox",
+      "label": "checkbox",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "sarbanes",
+      "label": "sarbanes",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "oxley",
+      "label": "oxley",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "dead-letter-regulation",
+      "label": "dead-letter regulation",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "sarbanes-oxley",
+      "label": "sarbanes-oxley",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "recursive",
+      "label": "recursive",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "compliance",
+      "label": "compliance",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "recursive-wcfa",
+      "label": "recursive wcfa",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
+      ]
+    },
+    {
+      "id": "instance",
+      "label": "instance",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "description": "",
+      "first_seen": "2026-03-15T15:51:14.300083+00:00",
+      "mention_count": 1,
+      "source_inquiries": [
+        "wcfa-001-rev2"
       ]
     }
   ],
@@ -5303,7 +5622,7 @@
       "source": "fallback",
       "target": "crash",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -5339,7 +5658,7 @@
       "source": "fallback",
       "target": "steward",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -5348,7 +5667,7 @@
       "source": "fallback",
       "target": "protocol",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -5447,7 +5766,7 @@
       "source": "fallback",
       "target": "abandon",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -7184,7 +7503,7 @@
       "source": "crash",
       "target": "steward",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -7193,7 +7512,7 @@
       "source": "crash",
       "target": "protocol",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -7292,7 +7611,7 @@
       "source": "crash",
       "target": "abandon",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -7679,7 +7998,7 @@
       "source": "steward",
       "target": "protocol",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -7778,7 +8097,7 @@
       "source": "steward",
       "target": "abandon",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -7877,7 +8196,7 @@
       "source": "protocol",
       "target": "abandon",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "The **Wire-Crash-Fallback-Abandon** pattern is systematic across **steward-protocol** \u2014 6 critical and 12 medium-severity instances of features wired but never called in production",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:05.994764+00:00"
@@ -13187,7 +13506,7 @@
       "source": "fallback",
       "target": "cycle",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "**Fallback Tolerance** creates **Silent Failure** \u2014 systems lose core guarantees while appearing healthy, because **safe fallbacks** hide **systemic dysfunction**",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:06.003127+00:00"
@@ -13223,7 +13542,7 @@
       "source": "fallback",
       "target": "moltbook",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "**Fallback Tolerance** creates **Silent Failure** \u2014 systems lose core guarantees while appearing healthy, because **safe fallbacks** hide **systemic dysfunction**",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:06.003127+00:00"
@@ -13799,7 +14118,7 @@
       "source": "cycle",
       "target": "moltbook",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "**Fallback Tolerance** creates **Silent Failure** \u2014 systems lose core guarantees while appearing healthy, because **safe fallbacks** hide **systemic dysfunction**",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:06.003127+00:00"
@@ -13844,7 +14163,7 @@
       "source": "cycle",
       "target": "feature",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "**Fallback Tolerance** creates **Silent Failure** \u2014 systems lose core guarantees while appearing healthy, because **safe fallbacks** hide **systemic dysfunction**",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:06.003127+00:00"
@@ -20612,7 +20931,7 @@
       "source": "letter",
       "target": "human",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "WCFA is **isomorphic** to **Institutional Capture** in human organizations \u2014 regulations written, enforcement fails, workarounds become permanent, regulation becomes **dead letter**",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:06.045869+00:00"
@@ -20648,7 +20967,7 @@
       "source": "letter",
       "target": "regulation",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "WCFA is **isomorphic** to **Institutional Capture** in human organizations \u2014 regulations written, enforcement fails, workarounds become permanent, regulation becomes **dead letter**",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:06.045869+00:00"
@@ -23006,7 +23325,7 @@
       "source": "human",
       "target": "regulation",
       "relation": "co_occurs",
-      "weight": 1.0,
+      "weight": 2.0,
       "evidence": "WCFA is **isomorphic** to **Institutional Capture** in human organizations \u2014 regulations written, enforcement fails, workarounds become permanent, regulation becomes **dead letter**",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:06.045869+00:00"
@@ -23109,6 +23428,2337 @@
       "evidence": "WCFA is **isomorphic** to **Institutional Capture** in human organizations \u2014 regulations written, enforcement fails, workarounds become permanent, regulation becomes **dead letter**",
       "source_inquiry": "wcfa-001",
       "created_at": "2026-03-15T15:37:06.045869+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "rediscover",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "moltbook",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "crash",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "mortem",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "audit",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "5-phase-cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "protocol",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "steward",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "fallback",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "abandon",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "finds",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "moltbook",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "crash",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "mortem",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "audit",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "5-phase-cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "protocol",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "steward",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "fallback",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "abandon",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscover",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "crash",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "mortem",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "audit",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "5-phase-cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "protocol",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "steward",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "abandon",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "moltbook",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "crash",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "mortem",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "audit",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "5-phase-cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "protocol",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "steward",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "abandon",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "crash",
+      "target": "mortem",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "crash",
+      "target": "audit",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "crash",
+      "target": "phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "crash",
+      "target": "5-phase-cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "crash",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "crash",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "mortem",
+      "target": "audit",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "mortem",
+      "target": "phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "mortem",
+      "target": "5-phase-cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "mortem",
+      "target": "protocol",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "mortem",
+      "target": "steward",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "mortem",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "mortem",
+      "target": "fallback",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "mortem",
+      "target": "abandon",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "mortem",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "audit",
+      "target": "phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "audit",
+      "target": "5-phase-cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "audit",
+      "target": "protocol",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "audit",
+      "target": "steward",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "audit",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "audit",
+      "target": "fallback",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "audit",
+      "target": "abandon",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "audit",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "phase",
+      "target": "5-phase-cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "phase",
+      "target": "protocol",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "phase",
+      "target": "steward",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "phase",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "phase",
+      "target": "fallback",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "phase",
+      "target": "abandon",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "phase",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "5-phase-cycle",
+      "target": "protocol",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "5-phase-cycle",
+      "target": "steward",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "5-phase-cycle",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "5-phase-cycle",
+      "target": "fallback",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "5-phase-cycle",
+      "target": "abandon",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "5-phase-cycle",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "protocol",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "protocol",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "steward",
+      "target": "rediscovery-phase",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "steward",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscovery-phase",
+      "target": "fallback",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscovery-phase",
+      "target": "abandon",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "rediscovery-phase",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "fallback",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "abandon",
+      "target": "rediscovery",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "WCFA is a **5-phase cycle**: Wire \u2192 Crash \u2192 Fallback \u2192 Abandon \u2192 **Rediscover**. The **audit** that finds WCFA IS the **Rediscovery Phase**.",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.292762+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "became",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "exercise",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "preventing",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "subject",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "checkbox",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "sarbanes",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "itself",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "exercise",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "preventing",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "subject",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "checkbox",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "sarbanes",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "became",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "preventing",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "subject",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "checkbox",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "sarbanes",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "exercise",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "subject",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "checkbox",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "sarbanes",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "preventing",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "cycle",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "subject",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "checkbox",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "sarbanes",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "regulation",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "subject",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "checkbox",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "sarbanes",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "cycle",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "checkbox",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "sarbanes",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "subject",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "sarbanes",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "checkbox",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "oxley",
+      "target": "dead-letter-regulation",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "oxley",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "oxley",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "oxley",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "oxley",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "oxley",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "oxley",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "oxley",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "oxley",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "dead-letter-regulation",
+      "target": "sarbanes-oxley",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "dead-letter-regulation",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "dead-letter-regulation",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "dead-letter-regulation",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "dead-letter-regulation",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "dead-letter-regulation",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "dead-letter-regulation",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "dead-letter-regulation",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes-oxley",
+      "target": "recursive",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes-oxley",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes-oxley",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes-oxley",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes-oxley",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes-oxley",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "sarbanes-oxley",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "recursive",
+      "target": "feature",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "recursive",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "recursive",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "recursive",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "recursive",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "recursive",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "feature",
+      "target": "human",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "feature",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "feature",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "feature",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "feature",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "human",
+      "target": "compliance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "human",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "human",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "compliance",
+      "target": "recursive-wcfa",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "compliance",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "compliance",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "recursive-wcfa",
+      "target": "letter",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "recursive-wcfa",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
+    },
+    {
+      "source": "letter",
+      "target": "instance",
+      "relation": "co_occurs",
+      "weight": 1.0,
+      "evidence": "**Recursive WCFA**: the fix for WCFA can itself be WCFA'd \u2014 **Sarbanes-Oxley** is a human-world instance where the regulation preventing **dead-letter regulation** became itself a dead letter",
+      "source_inquiry": "wcfa-001-rev2",
+      "created_at": "2026-03-15T15:51:14.300083+00:00"
     }
   ],
   "open_questions": [
@@ -23170,6 +25820,26 @@
         "agent_economics"
       ],
       "created_at": "2026-03-15T15:37:06.072176+00:00",
+      "addressed_by": ""
+    },
+    {
+      "question": "What architectural patterns can prevent the fix for WCFA from itself being WCFA'd (recursive silent failure)?",
+      "parent_inquiry": "wcfa-001-rev2",
+      "domains": [
+        "agent_governance",
+        "cross_domain"
+      ],
+      "created_at": "2026-03-15T15:51:14.311905+00:00",
+      "addressed_by": ""
+    },
+    {
+      "question": "Is Sarbanes-Oxley compliance degradation a confirmed instance of recursive WCFA in human institutions?",
+      "parent_inquiry": "wcfa-001-rev2",
+      "domains": [
+        "cross_domain",
+        "agent_governance"
+      ],
+      "created_at": "2026-03-15T15:51:14.311923+00:00",
       "addressed_by": ""
     }
   ]

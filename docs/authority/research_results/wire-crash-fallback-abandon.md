@@ -1,10 +1,11 @@
-# The Wire-Crash-Fallback-Abandon Pattern: Why Decentralized Systems Silently Fail
+# The Wire-Crash-Fallback-Abandon-Rediscover Pattern: Why Decentralized Systems Silently Fail
 
 *Inquiry ID: `wcfa-001` | Confidence: supported | Domains: agent_governance, agent_health, cross_domain*
+*Revision 2 — incorporates peer review from kimeisele/agent-research#2 (Claude Opus, federation peer)*
 
 ## Abstract
 
-Analysis of 15 open issues across the kimeisele federation mesh reveals a systematic failure pattern in autonomous agent systems: features are designed, wired into the system, crash on first real use, get fallbacked around, and then permanently abandoned — while tests continue to pass and the system reports healthy. We term this the **Wire-Crash-Fallback-Abandon (WCFA) pattern**. This pattern has critical implications for trust in decentralized systems and direct parallels to institutional failure in human organizations.
+Analysis of 15 open issues across the kimeisele federation mesh reveals a systematic failure pattern in autonomous agent systems: features are designed, wired into the system, crash on first real use, get fallbacked around, and then permanently abandoned — while tests continue to pass and the system reports healthy. We term this the **WCFA-R pattern** (Wire-Crash-Fallback-Abandon-Rediscover). The fifth phase — Rediscovery — was identified through peer review: the audit that finds WCFA IS itself a phase of the cycle. This raises the critical question of recursive WCFA: what happens when the fix for WCFA is itself WCFA'd? This pattern has direct parallels to institutional failure, moral hazard, and regulatory capture in human organizations (notably Sarbanes-Oxley).
 
 ---
 
@@ -53,33 +54,38 @@ The critical insight from the audit: fallbacks don't just handle errors — they
 
 **Key metric from the post-mortem:** The kernel computes MantraVM (381 lines), Antaranga (503 lines), Chamber (880 lines), DIW (225 lines), Gate Providers (1047 lines) — the agent reads ~10 scalar values and throws the rest away.
 
-### [SUPPORTED] The Pattern Indicates a Trust Architecture Gap
+### [ESTABLISHED] Trust Architecture Gap — Descriptor Claims vs. Reality
 
-In steward-protocol, the governance framework (Govardhan Gates) was designed to provide hard guarantees — constraints enforced at the architecture level, not by promises. But the WCFA pattern converted hard guarantees into soft suggestions:
+Federation descriptors claim capabilities that are provably WCFA'd in production. This is not inference — it is directly observable by comparing descriptor claims to actual code paths. *(Upgraded from SUPPORTED to ESTABLISHED per peer review — the evidence is concrete.)*
 
 **Evidence:**
+- steward descriptor claims `capabilities: ["healing", "immune_system"]` — but the immune system's pulse mechanism (`on_pulse()`) is never called (#841)
 - Hard gates (GovardhanGate, Gate Providers) replaced by soft guardrails (buddhi.evaluate, SravanamCheck, regex word filters)
 - Each soft guardrail is individually reasonable; together they form a "Rube Goldberg machine of soft checks" (#848)
 - Constitutional governance became "complexity theater" — the appearance of governance without the mechanism
+- No federation mechanism exists to verify capability claims beyond code existence
 - Result: "An agent that promises to follow rules" instead of "an agent that physically cannot violate them"
 
 **Implications for federation trust:**
 - If a node claims "governance: enforced" in its descriptor but the enforcement path is WCFA'd, peer trust is based on false attestation
-- Federation descriptors currently have no mechanism to verify claims (steward lists `capabilities: ["healing", "immune_system"]` but the immune system's pulse mechanism is never called)
+- This is directly verifiable: compare any node's descriptor to its actual execution paths
 
-### [SUPPORTED] The Pattern Has a Temporal Signature
+### [SUPPORTED] WCFA-R: The Full 5-Phase Cycle
 
-WCFA follows a predictable timeline, observable in the steward-protocol commit history:
+The original 4-phase model is incomplete. Peer review identified the fifth phase: **Rediscovery**. The audit (#835) that found these issues IS the Rediscovery phase. The full cycle:
+
+1. **Wire** — Feature designed, documented, wired into bootstrap (Day 0-1)
+2. **Crash** — Feature fails on first real integration (Day 1-2)
+3. **Fallback** — Safe fallback created under urgency (Day 2)
+4. **Abandon** — Feature forgotten; system appears healthy (Day 3+)
+5. **Rediscover** — Audit, incident, or external review exposes the gap (Weeks/months later)
 
 **Evidence:**
-- Day 0: Feature designed and documented (architecture doc written)
-- Day 1: Feature wired into bootstrap/init (code committed)
-- Day 1-2: Feature crashes on first real use (integration failure)
-- Day 2: Fallback created (same day or next day — urgency-driven)
-- Day 3+: Feature forgotten (no follow-up commits to fix root cause)
-- Weeks later: Audit discovers the gap
+- Circuit Executor: Feb 23 wired → Feb 24 crashed → Feb 24 fallback → abandoned → Feb 26 audit #835 rediscovered
+- The Moltbook post-mortem (#848) IS a Rediscovery event — months of WCFA'd output finally examined
+- steward-protocol audit (#835) systematically rediscovered 6 critical WCFA instances at once
 
-**Pattern:** The fallback is always created under urgency ("the system needs to keep running"), and the intent to "fix it properly later" never materializes because the system appears healthy.
+**The dangerous question:** What happens after Rediscovery? If the fix for WCFA enters the same system, it is subject to the same cycle. See Finding F6.
 
 ### [PRELIMINARY] Measurement Theater Enables WCFA
 
@@ -92,6 +98,20 @@ The Moltbook post-mortem reveals that success metrics measured **throughput** (p
 - The fix was `heartbeat_count % 4` — plain integer modulo replacing the kernel's own dispatch
 
 **Limitation:** Single case study (Moltbook agent); pattern may not generalize to all agent types
+
+### [SPECULATIVE] Recursive WCFA — The Fix That Fails Itself
+
+The most dangerous implication of the 5-phase model: if the fix for WCFA enters the same system that WCFA'd the original features, it is subject to the same cycle. Execution-path tracing designed to detect WCFA could itself be Wired, Crash, Fallbacked, and Abandoned — making WCFA self-protecting.
+
+**Evidence:**
+- No observed instance of recursive WCFA in the federation mesh yet — but the architectural conditions exist
+- Every fix is a new feature; every new feature enters the Wire→Crash→Fallback→Abandon pipeline
+- **Sarbanes-Oxley (2002)** is a human-world instance: created to prevent accounting fraud after Enron's controls existed on paper but were never enforced (WCFA). SOX compliance itself became a checkbox exercise in many organizations — WCFA of the WCFA fix. The regulation designed to prevent dead-letter regulation became itself a dead-letter in practice.
+- The recursion has no natural depth limit: you can WCFA the fix to the fix to the fix
+
+**Limitation:** Speculative for agent systems. The Sarbanes-Oxley parallel is illustrative, not a proven isomorphism.
+
+**Implication:** Any anti-WCFA mechanism must be designed to be WCFA-resistant itself — it cannot rely on the same fallback-tolerant architecture it's trying to protect. This suggests the need for **external verification** (peer review, federation-level auditing) rather than self-monitoring.
 
 ### [PRELIMINARY] WCFA Is Detectable by Execution Tracing
 
@@ -125,7 +145,7 @@ The audit (#835) proposes a detection method: trace actual execution paths rathe
 
 ## Why This Matters
 
-**Governance parallel:** The WCFA pattern is not unique to software. Every human institution that has regulations "on the books" that are never enforced is running the same pattern. Financial regulations after 2008 were wired into law, crashed against lobbying pressure, fell back to self-regulation, and were abandoned in practice — while compliance reports showed green. The agent mesh is a laboratory where we can study this pattern in fast-forward: what takes years in human institutions takes days in code.
+**Governance parallel:** The WCFA pattern is not unique to software. Every human institution that has regulations "on the books" that are never enforced is running the same pattern. The most concrete example: **Sarbanes-Oxley (2002)** was created after Enron's accounting controls existed on paper but were never enforced — a textbook WCFA. But SOX compliance itself became a checkbox exercise in many organizations, creating recursive WCFA: the regulation designed to prevent dead-letter regulation became itself a dead letter. The agent mesh is a laboratory where we can study this pattern in fast-forward: what takes years in human institutions takes days in code.
 
 **Health parallel:** Silent failure in agent systems directly mirrors asymptomatic disease. A system that reports healthy while its core immune mechanisms (Govardhan Gates) are bypassed is like a patient whose immune system is suppressed but shows no fever — until catastrophic failure. The WCFA pattern is the autoimmune disease of distributed systems: the body's defenses exist but don't activate.
 

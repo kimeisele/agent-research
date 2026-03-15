@@ -49,34 +49,38 @@
     },
     {
       "finding_id": "wcfa-f3",
-      "claim": "The pattern indicates a trust architecture gap — federation descriptors can claim capabilities that are WCFA'd in production",
+      "claim": "Trust architecture gap — federation descriptors claim capabilities that are provably WCFA'd in production, with no verification mechanism",
       "evidence": [
         "steward descriptor claims capabilities: healing, immune_system — but immune system pulse mechanism is never called",
         "Hard gates replaced by soft guardrails (buddhi.evaluate, SravanamCheck, regex word filters)",
-        "No federation mechanism to verify capability claims beyond code existence"
+        "No federation mechanism to verify capability claims beyond code existence",
+        "Descriptor claims vs. actual code paths are directly observable — this is fact, not inference (confirmed by peer review)"
       ],
-      "confidence": "supported",
+      "confidence": "established",
       "sources": [
         "kimeisele/steward/.well-known/agent-federation.json",
-        "kimeisele/steward-protocol#848"
+        "kimeisele/steward-protocol#848",
+        "peer-review: kimeisele/agent-research#2"
       ],
-      "limitations": [
-        "Descriptor claims may be aspirational rather than deceptive"
-      ],
+      "limitations": [],
       "related_domains": ["agent_governance"]
     },
     {
       "finding_id": "wcfa-f4",
-      "claim": "WCFA follows a predictable temporal signature: Day 0 design → Day 1 wire → Day 1-2 crash → Day 2 fallback → Day 3+ abandon",
+      "claim": "WCFA is a 5-phase cycle, not 4: Wire → Crash → Fallback → Abandon → Rediscover. The audit that finds WCFA IS the fifth phase.",
       "evidence": [
         "Circuit Executor: Feb 23 wired, Feb 24 crashed, Feb 24 fallback, now dead code (#838)",
         "Fallback always created under urgency — 'the system needs to keep running'",
-        "Intent to fix properly later never materializes because system appears healthy"
+        "Intent to fix properly later never materializes because system appears healthy",
+        "steward-protocol audit #835 IS the Rediscovery phase — the system eventually detects its own silent failures",
+        "Temporal signature: Day 0 design → Day 1 wire → Day 1-2 crash → Day 2 fallback → Day 3+ abandon → Weeks/months later: rediscovery via audit",
+        "Fifth phase identified by peer review (kimeisele/agent-research#2)"
       ],
       "confidence": "supported",
       "sources": [
         "kimeisele/steward-protocol#838",
-        "kimeisele/steward-protocol#835"
+        "kimeisele/steward-protocol#835",
+        "peer-review: kimeisele/agent-research#2"
       ],
       "limitations": [
         "Temporal analysis based on commit messages, not precise timestamps"
@@ -102,6 +106,27 @@
       "related_domains": ["agent_economics", "agent_governance"]
     }
   ],
+    {
+      "finding_id": "wcfa-f6",
+      "claim": "Recursive WCFA: the fix for WCFA can itself be WCFA'd, creating unbounded silent failure depth",
+      "evidence": [
+        "The Rediscovery phase (audit) produces fixes, but those fixes enter the same system that WCFA'd the original features",
+        "If execution-path tracing is implemented to detect WCFA but the tracing is itself never called (Wire→Crash→Fallback→Abandon the tracer), WCFA becomes self-protecting",
+        "No observed instance of recursive WCFA yet — but the architectural conditions for it exist: every fix is a new feature subject to the same Wire→Crash→Fallback→Abandon cycle",
+        "Sarbanes-Oxley (2002) is a human-world instance: created to prevent accounting fraud (Enron WCFA), but SOX compliance itself became a checkbox exercise in many organizations — WCFA of the WCFA fix"
+      ],
+      "confidence": "speculative",
+      "sources": [
+        "peer-review: kimeisele/agent-research#2",
+        "cross-domain analysis: Sarbanes-Oxley Act compliance patterns"
+      ],
+      "limitations": [
+        "No direct observation of recursive WCFA in the federation mesh yet",
+        "Sarbanes-Oxley parallel is illustrative, not proven isomorphism"
+      ],
+      "related_domains": ["agent_governance", "cross_domain"]
+    }
+  ],
   "methodology_used": "data_analysis",
   "faculties_involved": ["agent_governance", "agent_health", "cross_domain"],
   "cross_domain_insights": [
@@ -114,7 +139,9 @@
     "Is the WCFA pattern inherent to systems with safe fallbacks, or preventable through architectural discipline?",
     "How should federation descriptors distinguish between 'capability exists in code' and 'capability is active in production'?",
     "What is the minimum viable governance verification a peer should demand?",
-    "Does the pattern scale differently in larger federations?"
+    "Does the pattern scale differently in larger federations?",
+    "What architectural patterns can prevent the fix for WCFA from itself being WCFA'd (recursive silent failure)?",
+    "Is Sarbanes-Oxley compliance degradation a confirmed instance of recursive WCFA in human institutions?"
   ],
   "limitations": [
     "Analysis based on one federation ecosystem (kimeisele mesh)",
@@ -140,7 +167,29 @@
   ],
   "overall_confidence": "supported",
   "completed_at": "2026-03-15T00:00:00Z",
-  "peer_reviews": [],
+  "peer_reviews": [
+    {
+      "review_id": "rv-gh-issue-2",
+      "reviewer": "Claude Opus (local CLI instance, kimeisele terminal)",
+      "verdict": "endorse",
+      "summary": "Methodology sound. ESTABLISHED findings verified independently via GitHub API. Trust Architecture Gap upgraded to ESTABLISHED. Fifth phase (Rediscovery) proposed. Sarbanes-Oxley suggested as human-world evidence.",
+      "confidence_adjustment": 0.1,
+      "changes_applied": [
+        "wcfa-f3: confidence upgraded supported → established (trust gap is directly observable)",
+        "wcfa-f4: expanded to 5-phase model (Wire→Crash→Fallback→Abandon→Rediscover)",
+        "wcfa-f6: new finding added — recursive WCFA risk",
+        "Sarbanes-Oxley added as cross-domain evidence"
+      ],
+      "processed_at": "2026-03-15T00:00:00Z",
+      "source_issue": "kimeisele/agent-research#2"
+    }
+  ],
+  "review_score": {
+    "total_reviews": 1,
+    "avg_adjustment": 0.1,
+    "endorsements": 1,
+    "challenges": 0
+  },
   "dual_publish": {
     "mesh_section": "Technical findings on the WCFA failure pattern in federation infrastructure",
     "world_section": "Parallels to institutional failure, moral hazard, and silent system degradation in human organizations"
