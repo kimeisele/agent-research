@@ -1,0 +1,106 @@
+{
+  "kind": "faculty_ontology",
+  "version": 1,
+  "faculty": "computation-intelligence",
+  "description": "Domain ontology for the Computation & Intelligence faculty. Defines the concept hierarchy, relationships, and specialized knowledge sources.",
+
+  "concept_hierarchy": {
+    "agent_systems": {
+      "label": "Agent Systems",
+      "children": {
+        "multi_agent_coordination": {
+          "label": "Multi-Agent Coordination",
+          "concepts": ["consensus", "negotiation", "task_allocation", "swarm_intelligence", "stigmergy"]
+        },
+        "agent_architecture": {
+          "label": "Agent Architecture",
+          "concepts": ["cognitive_architecture", "reactive_agents", "deliberative_agents", "hybrid_agents", "bdi_model"]
+        },
+        "federation_protocols": {
+          "label": "Federation Protocols",
+          "concepts": ["discovery", "routing", "trust_networks", "authority_feeds", "relay_pump", "nadi_transport"]
+        },
+        "autonomous_systems": {
+          "label": "Autonomous Systems",
+          "concepts": ["self_healing", "self_organization", "heartbeat_cycles", "immune_systems", "circuit_breakers"]
+        }
+      }
+    },
+    "distributed_systems": {
+      "label": "Distributed Systems",
+      "children": {
+        "consensus_mechanisms": {
+          "label": "Consensus",
+          "concepts": ["byzantine_fault_tolerance", "raft", "paxos", "pbft", "proof_of_work", "proof_of_stake"]
+        },
+        "distributed_data": {
+          "label": "Distributed Data",
+          "concepts": ["crdt", "eventual_consistency", "vector_clocks", "merkle_trees", "distributed_hash_tables"]
+        },
+        "mesh_networking": {
+          "label": "Mesh Networking",
+          "concepts": ["gossip_protocols", "peer_discovery", "overlay_networks", "content_addressing"]
+        }
+      }
+    },
+    "ai_safety": {
+      "label": "AI Safety",
+      "children": {
+        "alignment": {
+          "label": "Alignment",
+          "concepts": ["value_alignment", "reward_hacking", "mesa_optimization", "corrigibility", "interpretability"]
+        },
+        "robustness": {
+          "label": "Robustness",
+          "concepts": ["adversarial_robustness", "distributional_shift", "specification_gaming", "reward_misspecification"]
+        },
+        "governance": {
+          "label": "AI Governance",
+          "concepts": ["responsible_ai", "algorithmic_fairness", "transparency", "accountability", "auditing"]
+        }
+      }
+    },
+    "information_theory": {
+      "label": "Information Theory",
+      "children": {
+        "foundations": {
+          "label": "Foundations",
+          "concepts": ["entropy", "mutual_information", "channel_capacity", "kolmogorov_complexity"]
+        },
+        "applied": {
+          "label": "Applied",
+          "concepts": ["compression", "error_correction", "cryptography", "privacy_preserving_computation"]
+        }
+      }
+    }
+  },
+
+  "cross_domain_bridges": {
+    "computation_biology": {
+      "bridge": ["computation-intelligence", "biology-ecology"],
+      "concepts": ["evolutionary_algorithms", "neural_architecture", "swarm_intelligence", "genetic_programming"]
+    },
+    "computation_physics": {
+      "bridge": ["computation-intelligence", "physics-fundamental"],
+      "concepts": ["quantum_computing", "computational_limits", "thermodynamics_of_computation", "landauer_principle"]
+    },
+    "computation_ethics": {
+      "bridge": ["computation-intelligence", "philosophy-ethics"],
+      "concepts": ["ai_ethics", "algorithmic_fairness", "autonomous_decision_making", "value_alignment"]
+    },
+    "computation_energy": {
+      "bridge": ["computation-intelligence", "energy-sustainability"],
+      "concepts": ["green_ai", "energy_efficient_computing", "carbon_aware_scheduling", "optimization_algorithms"]
+    }
+  },
+
+  "specialized_sources": {
+    "federation_repos": [
+      {"repo": "kimeisele/steward", "relevance": "Agent architecture reference — Sankhya-25 cognitive architecture, provider chamber, autonomous heartbeat"},
+      {"repo": "kimeisele/agent-internet", "relevance": "Federation protocol reference — relay pump, discovery, routing, trust engine"},
+      {"repo": "kimeisele/steward-protocol", "relevance": "Protocol primitives — canonical data structures, contract versioning"},
+      {"repo": "kimeisele/agent-city", "relevance": "Single-node runtime — local governance, city-level coordination"},
+      {"repo": "kimeisele/agent-world", "relevance": "Global governance — world-level coordination and trust"}
+    ]
+  }
+}

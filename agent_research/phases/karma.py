@@ -26,6 +26,12 @@ from agent_research.models import (
     ResearchResult,
     ResearchScope,
 )
+from agent_research.jiva import (
+    RESEARCH_SYSTEM_PROMPT,
+    NormalizedResponse,
+    ProviderChamber,
+    build_chamber_from_env,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -323,13 +329,131 @@ class KarmaPhase:
             confidence=ConfidenceLevel.ESTABLISHED,
         )
 
+    def jiva_analyze(self, ctx: ResearchContext) -> None:
+        """LLM-powered deep analysis via the Research Jiva.
+
+        If providers are available, the Jiva reads ALL sources and produces
+        real findings through actual reasoning — not keyword extraction.
+        Falls back to auto_analyze if no providers available.
+        """
+        chamber = build_chamber_from_env()
+        if len(chamber) == 0:
+            logger.info("  Jiva offline — no API keys. Falling back to structural analysis.")
+            self.auto_analyze(ctx)
+            return
+
+        # Build the research prompt with all source material
+        source_text = ""
+        for i, s in enumerate(ctx.all_sources):
+            source_label = s.get("path", s.get("source_node", s.get("title", f"source_{i}")))
+            content = s.get("content", "")
+            # Truncate very long sources to stay within context limits
+            if len(content) > 4000:
+                content = content[:4000] + "\n[... truncated ...]"
+            source_text += f"\n\n--- SOURCE: {source_label} ---\n{content}"
+
+        user_prompt = (
+            f"## Research Question\n{ctx.inquiry.question}\n\n"
+            f"## Context\n{ctx.inquiry.context or 'No additional context.'}\n\n"
+            f"## Faculties\n{', '.join(ctx.scope.faculties)}\n\n"
+            f"## Methodology\n{ctx.scope.methodology.value}\n\n"
+            f"## Source Material ({len(ctx.all_sources)} documents)\n{source_text}\n\n"
+            f"Analyze these sources and produce findings. Respond with JSON only."
+        )
+
+        messages = [
+            {"role": "system", "content": RESEARCH_SYSTEM_PROMPT},
+            {"role": "user", "content": user_prompt},
+        ]
+
+        try:
+            response = chamber.invoke(messages=messages, max_tokens=2048)
+            self._parse_jiva_response(ctx, response)
+            logger.info("  Jiva: produced %d findings", len(ctx.findings))
+        except Exception as e:
+            logger.warning("  Jiva failed: %s — falling back to structural analysis", e)
+            self.auto_analyze(ctx)
+
+    def _parse_jiva_response(self, ctx: ResearchContext, response: NormalizedResponse) -> None:
+        """Parse the Jiva's JSON response into findings."""
+        content = response.content.strip()
+        # Handle markdown code blocks
+        if content.startswith("```"):
+            content = content.split("\n", 1)[1] if "\n" in content else content[3:]
+            if content.endswith("```"):
+                content = content[:-3]
+            content = content.strip()
+
+        try:
+            data = json.loads(content)
+        except json.JSONDecodeError:
+            # Try to extract JSON from mixed output
+            start = content.find("{")
+            end = content.rfind("}") + 1
+            if start >= 0 and end > start:
+                try:
+                    data = json.loads(content[start:end])
+                except json.JSONDecodeError:
+                    ctx.add_finding(
+                        claim="Jiva produced non-parseable output",
+                        evidence=[content[:500]],
+                        confidence=ConfidenceLevel.UNKNOWN,
+                        limitations=["LLM response could not be parsed as JSON"],
+                    )
+                    return
+            else:
+                ctx.add_finding(
+                    claim="Jiva produced non-structured output",
+                    evidence=[content[:500]],
+                    confidence=ConfidenceLevel.UNKNOWN,
+                )
+                return
+
+        # Parse findings
+        confidence_map = {
+            "established": ConfidenceLevel.ESTABLISHED,
+            "supported": ConfidenceLevel.SUPPORTED,
+            "preliminary": ConfidenceLevel.PRELIMINARY,
+            "speculative": ConfidenceLevel.SPECULATIVE,
+            "unknown": ConfidenceLevel.UNKNOWN,
+        }
+
+        for f_data in data.get("findings", []):
+            ctx.add_finding(
+                claim=f_data.get("claim", ""),
+                evidence=f_data.get("evidence", []),
+                confidence=confidence_map.get(f_data.get("confidence", ""), ConfidenceLevel.PRELIMINARY),
+                sources=f_data.get("sources", []),
+                limitations=f_data.get("limitations", []),
+                related_domains=f_data.get("related_domains", []),
+            )
+
+        # Parse cross-domain insights and open questions into the context
+        for insight in data.get("cross_domain_insights", []):
+            ctx.add_finding(
+                claim=f"Cross-domain insight: {insight}",
+                evidence=[insight],
+                confidence=ConfidenceLevel.PRELIMINARY,
+                related_domains=ctx.scope.faculties,
+            )
+
+        for oq in data.get("open_questions", []):
+            ctx.add_finding(
+                claim=f"Emerging question: {oq}",
+                evidence=["Identified during Jiva analysis"],
+                confidence=ConfidenceLevel.SPECULATIVE,
+                limitations=["Question emerged from analysis — not yet investigated"],
+            )
+
     def run(self, inquiry: Inquiry, scope: ResearchScope) -> ResearchResult:
-        """Execute KARMA: build context, analyze, produce result."""
+        """Execute KARMA: build context, analyze (Jiva or structural), produce result."""
         logger.info("KARMA: '%s'", inquiry.question[:80])
         inquiry.status = InquiryStatus.IN_RESEARCH
 
         ctx = self.build_context(inquiry, scope)
-        self.auto_analyze(ctx)
+
+        # Try Jiva first, fall back to structural analysis
+        self.jiva_analyze(ctx)
 
         inquiry.status = InquiryStatus.IN_REVIEW
         return self._to_result(ctx)

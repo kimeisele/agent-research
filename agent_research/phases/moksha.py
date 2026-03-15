@@ -24,7 +24,14 @@ from agent_research.models import (
     InquiryStatus,
     ResearchResult,
 )
+from agent_research.knowledge import KnowledgeGraph
 from agent_research.nadi import NadiTransport
+from agent_research.peer_review import (
+    PeerReviewRequester,
+    PeerReviewScanner,
+    PeerReviewProcessor,
+    ReviewLedger,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -142,6 +149,11 @@ class MokshaPhase:
         self.ledger = LedgerUpdater(repo_root)
         self.nadi = NadiTransport(token)
         self.publisher = FeedPublisher(repo_root)
+        self.knowledge = KnowledgeGraph(repo_root / "data" / "knowledge_graph.json")
+        self.review_requester = PeerReviewRequester(self.nadi)
+        self.review_ledger = ReviewLedger(repo_root / "data" / "review_ledger.json")
+        self.review_processor = PeerReviewProcessor(repo_root)
+        self.review_scanner = PeerReviewScanner(self.nadi)
 
     def run(self, inquiry: Inquiry, result: ResearchResult) -> bool:
         logger.info("MOKSHA: Publishing '%s'", result.title[:60])
@@ -172,9 +184,89 @@ class MokshaPhase:
                 document_url=doc_url,
             )
 
-        # 5. Re-export authority feed
+        # 5. Feed findings into knowledge graph
+        for finding in result.findings:
+            new_concepts = self.knowledge.ingest_finding(
+                inquiry_id=result.inquiry_id,
+                claim=finding.claim,
+                evidence=finding.evidence,
+                domains=result.faculties_involved,
+                sources=finding.sources,
+            )
+            if new_concepts:
+                logger.info("  Knowledge graph: +%d concepts", len(new_concepts))
+
+        # Feed open questions back for future GENESIS
+        for oq in result.open_questions:
+            self.knowledge.ingest_open_question(
+                question=oq,
+                parent_inquiry=result.inquiry_id,
+                domains=result.faculties_involved,
+            )
+
+        self.knowledge.save()
+        kg_stats = self.knowledge.stats()
+        logger.info("  Knowledge graph: %d concepts, %d edges, %d open questions",
+                     kg_stats["concepts"], kg_stats["edges"], kg_stats["open_questions"])
+
+        # 6. Process any incoming peer reviews from prior publications
+        self._process_incoming_reviews()
+
+        # 7. Request peer review from federation nodes
+        peer_repos = self._get_review_peers(inquiry)
+        if peer_repos:
+            issued = self.review_requester.request_reviews(result, peer_repos)
+            logger.info("  Peer review requested from %d nodes (%d issued)",
+                        len(peer_repos), len(issued))
+
+        self.review_ledger.save()
+
+        # 8. Re-export authority feed
         self.publisher.publish()
 
         logger.info("MOKSHA complete: '%s' (confidence: %s, hash: %s)",
                      result.title[:40], result.overall_confidence.value, result.content_hash[:12])
         return True
+
+    def _get_review_peers(self, inquiry: Inquiry) -> list[str]:
+        """Determine which federation peers should review this result.
+
+        Peers are selected based on:
+        - Nodes with overlapping capabilities
+        - The source node (if it came from federation)
+        - Known active federation nodes
+        """
+        # Always request from steward and agent-world if they exist
+        candidates = {"steward", "agent-world", "agent-city"}
+
+        # Don't request review from the source node (they asked the question)
+        if inquiry.source_node:
+            candidates.discard(inquiry.source_node)
+
+        # Don't request review from ourselves
+        candidates.discard("agent-research")
+
+        return list(candidates)
+
+    def _process_incoming_reviews(self) -> None:
+        """Scan for and process incoming peer reviews."""
+        try:
+            incoming = self.review_scanner.scan()
+        except Exception as e:
+            logger.warning("  Peer review scan failed: %s", e)
+            return
+
+        for review in incoming:
+            # Skip if already in our ledger
+            existing = self.review_ledger.get_reviews(review.inquiry_id)
+            if any(r.review_id == review.review_id or
+                   (r.reviewer_node == review.reviewer_node and
+                    r.content_hash == review.content_hash)
+                   for r in existing):
+                continue
+
+            self.review_ledger.add_review(review)
+            result = self.review_processor.process(review)
+            logger.info("  Processed peer review %s: %s (%s)",
+                        review.review_id, review.verdict.value,
+                        result.get("actions_taken", []))
