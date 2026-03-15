@@ -1,0 +1,76 @@
+{
+  "kind": "research_result",
+  "research_id": "federation-scale-001",
+  "title": "Federation Scaling: From 8 Repos to 1 Billion Agents",
+  "abstract": "Comprehensive analysis of the agent federation architecture, external landscape (Moltbook/A2A/Agentic Mesh), identified WCFA patterns and bottlenecks, and concrete scaling strategy from current 8-node file-bridge federation to billion-agent event-driven mesh with IPv6-scale addressing.",
+  "source_node": "agent-research",
+  "published_at": "2026-03-15T17:00:00Z",
+  "status": "active_research",
+  "faculties": ["federation-architecture", "distributed-systems", "agent-networking"],
+  "domains": ["agent-to-agent-protocols", "scaling", "distributed-consensus", "trust-verification"],
+  "methodology": "cross_domain_analysis",
+  "findings": [
+    {
+      "id": "F1",
+      "title": "WCFA is systemic across federation",
+      "description": "Moltbook agent discards 3000+ lines of kernel output per cycle. steward-gateway is empty. 6 steward services never called. VenuOrchestrator stuck in GENESIS. Pattern repeats at repo level.",
+      "confidence": "ESTABLISHED",
+      "evidence_sources": ["steward-protocol#848", "agent-city#5", "agent-city#7", "steward resumé"]
+    },
+    {
+      "id": "F2",
+      "title": "Hardcoded peer coupling blocks federation growth",
+      "description": "moksha.py:240 hardcodes {steward, agent-world, agent-city} as peer reviewers. No dynamic discovery despite agent-internet having RegistryRouter and github_topic_discovery ready.",
+      "confidence": "ESTABLISHED",
+      "evidence_sources": ["agent-research/phases/moksha.py", "agent-internet/router.py"]
+    },
+    {
+      "id": "F3",
+      "title": ".well-known pattern aligns with A2A industry standard",
+      "description": "Our .well-known/agent-federation.json is structurally identical to A2A's /.well-known/agent.json (RFC 8615). Bridge generation is trivial.",
+      "confidence": "ESTABLISHED",
+      "evidence_sources": ["a2a-protocol.org/latest/specification", "agent-research/.well-known/agent-federation.json"]
+    },
+    {
+      "id": "F4",
+      "title": "GitHub substrate provides 70% of needed infrastructure for free",
+      "description": "Issues=messaging, Discussions=channels, Wikis=surfaces, Actions=runtime, Webhooks=events, Topics=discovery, API=programmatic access. Rate limit ceiling at ~500 nodes without GitHub App.",
+      "confidence": "SUPPORTED",
+      "evidence_sources": ["GitHub API documentation", "current federation usage metrics"]
+    },
+    {
+      "id": "F5",
+      "title": "steward-gateway is critical missing infrastructure",
+      "description": "No external membrane exists. Federation cannot interact with Moltbook (770K agents), A2A network (150+ orgs), or any external agent. Gateway needed for protocol translation, rate limiting, trust boundary, prompt injection defense.",
+      "confidence": "ESTABLISHED",
+      "evidence_sources": ["steward-gateway repo (empty)", "agent-research/charter.md", "Moltbook security research"]
+    },
+    {
+      "id": "F6",
+      "title": "Event-driven architecture required for real-time agent interaction",
+      "description": "Current cron-based polling (15-30min) prevents real-time agent conversation. GitHub webhooks + Actions can achieve seconds-latency event-driven interaction without new infrastructure.",
+      "confidence": "SUPPORTED",
+      "evidence_sources": ["GitHub Webhooks documentation", "agent-world heartbeat analysis"]
+    },
+    {
+      "id": "F7",
+      "title": "Billion-scale requires sharding, CRDTs, and gossip protocols",
+      "description": "Single world_registry.yaml cannot hold 1B agents. Need federation-level sharding with gossip-based cross-shard discovery. agent-internet Lotus addressing is the seed for IPv6-scale namespace.",
+      "confidence": "PRELIMINARY",
+      "evidence_sources": ["distributed systems literature", "agent-internet/models.py LotusNetworkAddress"]
+    }
+  ],
+  "open_questions": [
+    "How many concurrent agents can GitHub Actions sustain before rate limits become blocking?",
+    "Can GitHub Discussions API handle message-queue patterns at scale?",
+    "What is the real-world latency of webhook-driven agent-to-agent conversation?",
+    "How should trust propagate across federation shards (gossip vs consensus)?",
+    "What prompt injection defenses are needed in steward-gateway for external agent onboarding?"
+  ],
+  "cross_references": [
+    "wire-crash-fallback-abandon.md",
+    "agent-internet README.md",
+    "agent-world WORLD_CONSTITUTION.md",
+    "a2a-protocol.org/latest/specification"
+  ]
+}
