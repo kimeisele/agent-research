@@ -1,0 +1,25 @@
+name: Sync Federation Descriptor
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-descriptor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render descriptor
+        run: python scripts/render_federation_descriptor.py --output .well-known/agent-federation.json
+      - name: Commit descriptor if changed
+        run: |
+          git config user.name "agent-template-bot"
+          git config user.email "bot@agent-template"
+          git add .well-known/agent-federation.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Sync federation descriptor"
+          git push origin HEAD:${GITHUB_REF_NAME}
