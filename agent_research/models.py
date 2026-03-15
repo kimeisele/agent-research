@@ -200,16 +200,31 @@ class ResearchResult:
         }
 
     def to_authority_document(self) -> str:
-        """Render as publishable authority document markdown."""
+        """Render as dual-publish authority document.
+
+        Every research document has two sections:
+        - "For the Mesh" — technical findings, machine-readable, for federation peers
+        - "For the World" — what this means for humans, readable, transferable
+        """
         lines = [
             f"# {self.title}",
+            "",
+            f"*Inquiry ID: {self.inquiry_id} | Confidence: {self.overall_confidence.value} | "
+            f"Domains: {', '.join(self.faculties_involved)}*",
             "",
             "## Abstract",
             self.abstract,
             "",
+            "---",
+            "",
+            "# Part I: For the Mesh",
+            "",
+            "*Technical findings for federation nodes and agent systems.*",
+            "",
             "## Methodology",
-            f"Type: {self.methodology_used.value}",
-            f"Faculties: {', '.join(self.faculties_involved)}",
+            f"- **Type:** {self.methodology_used.value}",
+            f"- **Domains:** {', '.join(self.faculties_involved)}",
+            f"- **Sources analyzed:** {len(self.sources)}",
             "",
             "## Findings",
         ]
@@ -221,8 +236,8 @@ class ResearchResult:
                     lines.append(f"- {e}")
             if f.limitations:
                 lines.append("\n**Limitations:**")
-                for l in f.limitations:
-                    lines.append(f"- {l}")
+                for lim in f.limitations:
+                    lines.append(f"- {lim}")
             if f.sources:
                 lines.append("\n**Sources:**")
                 for s in f.sources:
@@ -238,21 +253,68 @@ class ResearchResult:
             for q in self.open_questions:
                 lines.append(f"- {q}")
 
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+        lines.append("# Part II: For the World")
+        lines.append("")
+        lines.append("*What these findings mean beyond the mesh — "
+                      "for human systems, organizations, and society.*")
+        lines.append("")
+
+        # Generate human-world section from findings
+        lines.append("## Why This Matters")
+        lines.append("")
+        if self._has_domain("agent_governance"):
+            lines.append("**Governance parallel:** The challenges of decentralized decision-making "
+                        "in agent meshes directly mirror challenges in human governance — "
+                        "from open-source communities to international relations.")
+            lines.append("")
+        if self._has_domain("agent_health"):
+            lines.append("**Health parallel:** Self-healing patterns in distributed systems "
+                        "echo biological healing — circuit breakers as immune responses, "
+                        "cascading failures as sepsis, monitoring as diagnostics.")
+            lines.append("")
+        if self._has_domain("agent_economics"):
+            lines.append("**Economics parallel:** Resource allocation under constraints "
+                        "without central planning is the fundamental problem of economics. "
+                        "Every finding here has a human-economy counterpart.")
+            lines.append("")
+        if self._has_domain("agent_physics"):
+            lines.append("**Physics parallel:** Emergent behavior in agent networks "
+                        "follows patterns from physics — phase transitions, scaling laws, "
+                        "information propagation. Complex systems share universal principles.")
+            lines.append("")
+
+        lines.append("## Key Takeaways for Humans")
+        lines.append("")
+        for f in self.findings:
+            if f.confidence in (ConfidenceLevel.ESTABLISHED, ConfidenceLevel.SUPPORTED):
+                lines.append(f"- {f.claim}")
+        lines.append("")
+
         if self.limitations:
-            lines.append("\n## Limitations")
-            for l in self.limitations:
-                lines.append(f"- {l}")
+            lines.append("## Limitations")
+            for lim in self.limitations:
+                lines.append(f"- {lim}")
+            lines.append("")
 
         if self.sources:
-            lines.append("\n## Sources")
+            lines.append("## Sources")
             for s in self.sources:
                 lines.append(f"- {s}")
+            lines.append("")
 
-        lines.append("\n## Metadata")
-        lines.append(f"- Inquiry ID: {self.inquiry_id}")
+        lines.append("---")
+        lines.append("")
+        lines.append("## Metadata")
+        lines.append(f"- Inquiry ID: `{self.inquiry_id}`")
         lines.append(f"- Overall Confidence: {self.overall_confidence.value}")
-        lines.append(f"- Content Hash: {self.content_hash}")
+        lines.append(f"- Content Hash: `{self.content_hash}`")
         lines.append(f"- Completed: {self.completed_at}")
         lines.append("")
 
         return "\n".join(lines)
+
+    def _has_domain(self, domain: str) -> bool:
+        return any(domain in f for f in self.faculties_involved)

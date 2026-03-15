@@ -16,10 +16,11 @@ from agent_research.phases.dharma import DharmaPhase, FacultyRouter, Methodology
 def _make_repo(tmp: Path) -> Path:
     cap = {
         "faculties": [
-            {"id": "energy-sustainability", "domains": ["energy"]},
-            {"id": "health-medicine", "domains": ["health"]},
-            {"id": "computation-intelligence", "domains": ["ai"]},
-            {"id": "cross-domain", "domains": ["interdisciplinary"]},
+            {"id": "agent_physics", "domains": ["physics", "emergence"]},
+            {"id": "agent_governance", "domains": ["governance", "trust"]},
+            {"id": "agent_economics", "domains": ["resources", "cost"]},
+            {"id": "agent_health", "domains": ["healing", "resilience"]},
+            {"id": "cross_domain", "domains": ["interdisciplinary"]},
         ]
     }
     (tmp / "docs" / "authority").mkdir(parents=True)
@@ -27,31 +28,31 @@ def _make_repo(tmp: Path) -> Path:
     return tmp
 
 
-def test_faculty_router_energy():
+def test_faculty_router_governance():
     with tempfile.TemporaryDirectory() as tmp:
         repo = _make_repo(Path(tmp))
         router = FacultyRouter(repo / "docs" / "authority" / "capabilities.json")
-        inq = Inquiry(question="How do we improve solar panel efficiency?")
+        inq = Inquiry(question="How does trust propagate in decentralized governance?")
         faculties = router.route(inq)
-        assert "energy-sustainability" in faculties
+        assert "agent_governance" in faculties
 
 
 def test_faculty_router_health():
     with tempfile.TemporaryDirectory() as tmp:
         repo = _make_repo(Path(tmp))
         router = FacultyRouter(repo / "docs" / "authority" / "capabilities.json")
-        inq = Inquiry(question="What is the effect of nutrition on disease prevention?")
+        inq = Inquiry(question="How does self-healing work when a circuit breaker fails?")
         faculties = router.route(inq)
-        assert "health-medicine" in faculties
+        assert "agent_health" in faculties
 
 
 def test_faculty_router_explicit_domains():
     with tempfile.TemporaryDirectory() as tmp:
         repo = _make_repo(Path(tmp))
         router = FacultyRouter(repo / "docs" / "authority" / "capabilities.json")
-        inq = Inquiry(question="Random question", domains=["computation-intelligence"])
+        inq = Inquiry(question="Random question", domains=["agent_physics"])
         faculties = router.route(inq)
-        assert faculties == ["computation-intelligence"]
+        assert faculties == ["agent_physics"]
 
 
 def test_faculty_router_default_cross_domain():
@@ -65,16 +66,16 @@ def test_faculty_router_default_cross_domain():
 
 def test_methodology_selector():
     sel = MethodologySelector()
-    assert sel.select(Inquiry(question="What is the state of quantum computing?")) == MethodologyType.SYNTHESIS
-    assert sel.select(Inquiry(question="Review of current research on biodiversity")) == MethodologyType.LITERATURE_REVIEW
-    assert sel.select(Inquiry(question="Connection between physics and biology")) == MethodologyType.CROSS_DOMAIN
+    assert sel.select(Inquiry(question="What is the state of agent coordination?")) == MethodologyType.SYNTHESIS
+    assert sel.select(Inquiry(question="Review of current research on federation protocols")) == MethodologyType.LITERATURE_REVIEW
+    assert sel.select(Inquiry(question="Connection between governance and health in agents")) == MethodologyType.CROSS_DOMAIN
 
 
 def test_dharma_produces_scope():
     with tempfile.TemporaryDirectory() as tmp:
         repo = _make_repo(Path(tmp))
         dharma = DharmaPhase(repo)
-        inq = Inquiry(question="How does quantum mechanics apply to computing?")
+        inq = Inquiry(question="How does trust affect federation governance?")
         scope = dharma.run(inq)
         assert scope.inquiry_id == inq.inquiry_id
         assert len(scope.faculties) >= 1
@@ -86,8 +87,8 @@ def test_dharma_cross_domain_deeper():
     with tempfile.TemporaryDirectory() as tmp:
         repo = _make_repo(Path(tmp))
         dharma = DharmaPhase(repo)
-        # Question that hits multiple faculties
-        inq = Inquiry(question="How does energy efficiency affect health outcomes in medicine?")
+        # Question that hits multiple domains
+        inq = Inquiry(question="How does governance integrity affect recovery and healing efficiency?")
         scope = dharma.run(inq)
         assert len(scope.faculties) >= 2
         assert len(scope.cross_domain_bridges) >= 1
