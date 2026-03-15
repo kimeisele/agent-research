@@ -1,18 +1,20 @@
-"""KARMA Phase — Execute research.
+"""KARMA Phase — Research execution infrastructure.
 
-This is where the actual work happens:
-1. Gather sources and data
-2. Analyze and extract findings
-3. Synthesize across domains
-4. Identify cross-domain connections
-5. Assess confidence and limitations
-6. Produce structured ResearchResult
+The agent running this engine IS the intelligence. KARMA provides:
+1. Data access layer (GitHub API, federation peers, local docs)
+2. Research task structure (what to investigate, where to look)
+3. Result collection framework (structured findings with provenance)
+
+The executing agent (Claude, Steward, any agent) brings the reasoning.
+KARMA gives them the tools and the pipeline.
 """
 from __future__ import annotations
 
 import json
 import logging
-from hashlib import sha256
+import os
+import re
+import urllib.request
 from pathlib import Path
 from typing import Any
 
@@ -21,348 +23,413 @@ from agent_research.models import (
     Finding,
     Inquiry,
     InquiryStatus,
-    MethodologyType,
     ResearchResult,
     ResearchScope,
 )
 
 logger = logging.getLogger(__name__)
 
+REPO_OWNER = "kimeisele"
 
-class SourceCollector:
-    """Collect source material from available knowledge bases.
 
-    Sources:
-    - Local authority documents (our own published research)
-    - Federation authority feeds (other nodes' publications)
-    - Faculty knowledge bases
-    - Cached external references
+class GitHubDataLayer:
+    """Data access layer for the federation mesh via GitHub API.
+
+    This is the eyes and ears of the research engine.
+    Any agent can use this to fetch data from the entire federation.
     """
 
-    def __init__(self, repo_root: Path):
+    def __init__(self, token: str | None = None):
+        self.token = token or os.environ.get("GITHUB_TOKEN", "")
+
+    def search_repos(self, query: str) -> list[dict[str, Any]]:
+        """Search GitHub repos."""
+        data = self._api(f"/search/repositories?q={query}&per_page=20")
+        return data.get("items", []) if isinstance(data, dict) else []
+
+    def search_code(self, query: str, org: str = REPO_OWNER) -> list[dict[str, Any]]:
+        """Search code across the federation."""
+        data = self._api(f"/search/code?q={query}+org:{org}&per_page=20")
+        return data.get("items", []) if isinstance(data, dict) else []
+
+    def get_repo(self, repo: str) -> dict[str, Any]:
+        """Get repo metadata."""
+        return self._api(f"/repos/{repo}") or {}
+
+    def get_file(self, repo: str, path: str, branch: str = "main") -> str | None:
+        """Fetch a file's content from a repo."""
+        url = f"https://raw.githubusercontent.com/{repo}/{branch}/{path}"
+        try:
+            req = urllib.request.Request(url)
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                return resp.read().decode("utf-8", errors="replace")
+        except Exception:
+            return None
+
+    def list_dir(self, repo: str, path: str = "", branch: str = "main") -> list[dict[str, Any]]:
+        """List directory contents in a repo."""
+        data = self._api(f"/repos/{repo}/contents/{path}?ref={branch}")
+        return data if isinstance(data, list) else []
+
+    def get_issues(self, repo: str, labels: str = "", state: str = "open") -> list[dict[str, Any]]:
+        """Get issues from a repo."""
+        params = f"state={state}&per_page=30"
+        if labels:
+            params += f"&labels={labels}"
+        data = self._api(f"/repos/{repo}/issues?{params}")
+        return data if isinstance(data, list) else []
+
+    def get_federation_nodes(self) -> list[dict[str, Any]]:
+        """Discover all federation nodes."""
+        repos = self.search_repos(f"topic:agent-federation-node+org:{REPO_OWNER}")
+        nodes = []
+        for repo in repos:
+            descriptor_raw = self.get_file(repo["full_name"], ".well-known/agent-federation.json")
+            descriptor = None
+            if descriptor_raw:
+                try:
+                    descriptor = json.loads(descriptor_raw)
+                except json.JSONDecodeError:
+                    pass
+            nodes.append({
+                "name": repo["name"],
+                "full_name": repo["full_name"],
+                "description": repo.get("description", ""),
+                "topics": repo.get("topics", []),
+                "descriptor": descriptor,
+            })
+        return nodes
+
+    def get_peer_documents(self, repo: str) -> list[dict[str, Any]]:
+        """Fetch authority documents from a peer node."""
+        docs = []
+        # Try charter
+        charter = self.get_file(repo, "docs/authority/charter.md")
+        if charter:
+            docs.append({"type": "charter", "content": charter, "source": repo})
+        # Try README
+        readme = self.get_file(repo, "README.md")
+        if readme:
+            docs.append({"type": "readme", "content": readme, "source": repo})
+        return docs
+
+    def _api(self, path: str) -> Any:
+        if not self.token:
+            return {}
+        url = f"https://api.github.com{path}"
+        req = urllib.request.Request(url, headers={
+            "Authorization": f"Bearer {self.token}",
+            "Accept": "application/vnd.github+json",
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                return json.loads(resp.read())
+        except Exception as e:
+            logger.warning("GitHub API error for %s: %s", path, e)
+            return {}
+
+
+class ResearchContext:
+    """Everything an agent needs to conduct research on an inquiry.
+
+    This is the workbench. The agent reads this, reasons about it,
+    and produces findings.
+    """
+
+    def __init__(self, inquiry: Inquiry, scope: ResearchScope):
+        self.inquiry = inquiry
+        self.scope = scope
+        self.local_sources: list[dict[str, Any]] = []
+        self.federation_sources: list[dict[str, Any]] = []
+        self.peer_nodes: list[dict[str, Any]] = []
+        self.findings: list[Finding] = []
+
+    def add_finding(self, claim: str, evidence: list[str],
+                    confidence: ConfidenceLevel = ConfidenceLevel.PRELIMINARY,
+                    sources: list[str] | None = None,
+                    limitations: list[str] | None = None,
+                    related_domains: list[str] | None = None) -> Finding:
+        """Add a research finding to the context."""
+        finding = Finding(
+            claim=claim,
+            evidence=evidence,
+            confidence=confidence,
+            sources=sources or [],
+            limitations=limitations or [],
+            related_domains=related_domains or [],
+        )
+        self.findings.append(finding)
+        return finding
+
+    @property
+    def all_sources(self) -> list[dict[str, Any]]:
+        return self.local_sources + self.federation_sources
+
+    def source_summary(self) -> str:
+        """Human-readable summary of available sources."""
+        lines = [f"Research context for: {self.inquiry.question}",
+                 f"Faculties: {', '.join(self.scope.faculties)}",
+                 f"Methodology: {self.scope.methodology.value}",
+                 f"Local sources: {len(self.local_sources)}",
+                 f"Federation sources: {len(self.federation_sources)}",
+                 f"Peer nodes: {len(self.peer_nodes)}"]
+        return "\n".join(lines)
+
+
+class KarmaPhase:
+    """KARMA: Research execution infrastructure.
+
+    Provides the data layer and result framework. The agent running
+    the engine brings the intelligence.
+
+    For automated cycles (heartbeat), KARMA does structural analysis.
+    For agent-driven research, KARMA hands the ResearchContext to the
+    agent and collects their findings.
+    """
+
+    def __init__(self, repo_root: Path, token: str | None = None):
         self.repo_root = repo_root
+        self.data = GitHubDataLayer(token)
         self.docs_dir = repo_root / "docs"
-        self.data_dir = repo_root / "data"
-        self.cache_dir = self.data_dir / "source_cache"
 
-    def collect(self, scope: ResearchScope) -> list[dict[str, Any]]:
-        """Collect relevant sources for the given scope."""
-        sources: list[dict[str, Any]] = []
+    def build_context(self, inquiry: Inquiry, scope: ResearchScope) -> ResearchContext:
+        """Build a research context with all available data.
 
-        # 1. Local faculty knowledge
-        sources.extend(self._collect_faculty_knowledge(scope.faculties))
+        This is what an agent gets to work with.
+        """
+        ctx = ResearchContext(inquiry, scope)
 
-        # 2. Federation authority feeds from other nodes
-        sources.extend(self._collect_federation_sources(scope))
-
-        # 3. Prior research results
-        sources.extend(self._collect_prior_research(scope))
-
-        logger.info("  Collected %d sources", len(sources))
-        return sources
-
-    def _collect_faculty_knowledge(self, faculties: list[str]) -> list[dict[str, Any]]:
-        """Read existing faculty documents."""
-        sources = []
+        # Collect local faculty knowledge
         faculties_dir = self.docs_dir / "authority" / "faculties"
-        for faculty_id in faculties:
+        for faculty_id in scope.faculties:
             faculty_dir = faculties_dir / faculty_id
             if not faculty_dir.exists():
                 continue
-            for md_file in faculty_dir.glob("*.md"):
-                body = md_file.read_text()
-                sources.append({
+            for md_file in sorted(faculty_dir.glob("*.md")):
+                ctx.local_sources.append({
                     "type": "faculty_document",
                     "faculty": faculty_id,
                     "path": str(md_file.relative_to(self.repo_root)),
-                    "content": body,
-                    "content_hash": sha256(body.encode()).hexdigest()[:16],
+                    "content": md_file.read_text(),
                 })
-        return sources
 
-    def _collect_federation_sources(self, scope: ResearchScope) -> list[dict[str, Any]]:
-        """Read cached authority feeds from federation peers."""
-        sources = []
-        feed_cache = self.data_dir / "authority_feed_cache"
-        if not feed_cache.exists():
-            return sources
-
-        for repo_dir in feed_cache.iterdir():
-            if not repo_dir.is_dir():
+        # Collect federation peer data
+        ctx.peer_nodes = self.data.get_federation_nodes()
+        for node in ctx.peer_nodes:
+            if node["name"] == "agent-research":
                 continue
-            # Look for canonical surface exports
-            for bundle_dir in repo_dir.glob("*/"):
-                cs_path = bundle_dir / ".authority-exports" / "canonical-surface.json"
-                if not cs_path.exists():
-                    continue
+            peer_docs = self.data.get_peer_documents(node["full_name"])
+            for doc in peer_docs:
+                ctx.federation_sources.append({
+                    "type": f"peer_{doc['type']}",
+                    "source_node": node["name"],
+                    "content": doc["content"],
+                })
+
+        # Collect prior research
+        results_dir = self.docs_dir / "authority" / "research_results"
+        if results_dir.exists():
+            for f in results_dir.glob("*.json"):
                 try:
-                    cs = json.loads(cs_path.read_text())
-                    for doc in cs.get("documents", []):
-                        # Check if document is relevant to our faculties
-                        doc_text = doc.get("body_markdown", "").lower()
-                        for faculty in scope.faculties:
-                            if faculty.replace("-", " ") in doc_text or faculty.replace("-", "") in doc_text:
-                                sources.append({
-                                    "type": "federation_document",
-                                    "source_node": repo_dir.name,
-                                    "document_id": doc.get("document_id", ""),
-                                    "title": doc.get("title", ""),
-                                    "content": doc.get("body_markdown", ""),
-                                })
-                                break
+                    result = json.loads(f.read_text())
+                    if set(result.get("faculties_involved", [])) & set(scope.faculties):
+                        ctx.local_sources.append({
+                            "type": "prior_research",
+                            "title": result.get("title", ""),
+                            "content": json.dumps(result, indent=2),
+                        })
                 except (json.JSONDecodeError, OSError):
                     continue
-        return sources
 
-    def _collect_prior_research(self, scope: ResearchScope) -> list[dict[str, Any]]:
-        """Read previously completed research results."""
-        sources = []
-        results_dir = self.docs_dir / "authority" / "research_results"
-        if not results_dir.exists():
-            return sources
+        logger.info("  Context built: %d local, %d federation, %d peers",
+                     len(ctx.local_sources), len(ctx.federation_sources), len(ctx.peer_nodes))
+        return ctx
 
-        for result_file in results_dir.glob("*.json"):
-            try:
-                result = json.loads(result_file.read_text())
-                # Check for faculty overlap
-                result_faculties = set(result.get("faculties_involved", []))
-                if result_faculties & set(scope.faculties):
-                    sources.append({
-                        "type": "prior_research",
-                        "inquiry_id": result.get("inquiry_id", ""),
-                        "title": result.get("title", ""),
-                        "content": json.dumps(result),
-                    })
-            except (json.JSONDecodeError, OSError):
-                continue
-        return sources
+    def auto_analyze(self, ctx: ResearchContext) -> None:
+        """Automated structural analysis for heartbeat cycles.
 
+        This is the fallback when no agent is actively reasoning.
+        It does honest structural work: mapping what exists, finding
+        gaps, identifying connections. No fake "findings".
+        """
+        inquiry = ctx.inquiry
+        scope = ctx.scope
+        all_content = "\n".join(s.get("content", "") for s in ctx.all_sources)
+        query_terms = _extract_terms(inquiry.question)
 
-class Analyzer:
-    """Analyze collected sources and extract findings.
+        # 1. Map what the federation knows about this topic
+        if ctx.peer_nodes:
+            relevant_peers = []
+            for node in ctx.peer_nodes:
+                desc = node.get("descriptor") or {}
+                node_text = f"{node.get('description', '')} {desc.get('display_name', '')} {' '.join(desc.get('capabilities', []))}"
+                overlap = query_terms & _extract_terms(node_text)
+                if overlap:
+                    relevant_peers.append((node["name"], node.get("description", ""), overlap))
 
-    Phase 1 (current): Deterministic analysis — keyword extraction,
-    pattern matching, structural analysis. No LLM.
+            if relevant_peers:
+                ctx.add_finding(
+                    claim="Federation nodes with relevant capabilities identified",
+                    evidence=[f"{name}: {desc} (matching: {', '.join(sorted(terms))})"
+                              for name, desc, terms in relevant_peers],
+                    confidence=ConfidenceLevel.ESTABLISHED,
+                    sources=[f"federation:{name}" for name, _, _ in relevant_peers],
+                )
 
-    Phase 2 (future): LLM-assisted deep analysis — but only for the
-    actual reasoning, not for plumbing.
-    """
-
-    def analyze(self, inquiry: Inquiry, scope: ResearchScope,
-                sources: list[dict[str, Any]]) -> list[Finding]:
-        """Extract findings from sources."""
-        findings: list[Finding] = []
-
-        if not sources:
-            findings.append(Finding(
-                claim=f"Insufficient sources available for: {inquiry.question}",
-                evidence=["No relevant sources found in local knowledge base or federation feeds"],
-                confidence=ConfidenceLevel.UNKNOWN,
-                limitations=["No data available for analysis"],
-            ))
-            return findings
-
-        # Structural analysis — what do our sources tell us?
-        source_types = {}
-        for s in sources:
-            t = s.get("type", "unknown")
-            source_types[t] = source_types.get(t, 0) + 1
-
-        # Faculty coverage analysis
-        covered_faculties = set()
-        for s in sources:
-            if "faculty" in s:
-                covered_faculties.add(s["faculty"])
-
-        uncovered = set(scope.faculties) - covered_faculties
-        if uncovered:
-            findings.append(Finding(
-                claim=f"Research gap identified: faculties {uncovered} have no existing sources",
-                evidence=[f"Source scan found 0 documents for {', '.join(uncovered)}"],
-                confidence=ConfidenceLevel.ESTABLISHED,
-                limitations=["Gap detection is based on local sources only"],
-                related_domains=list(uncovered),
-            ))
-
-        # Extract key concepts from sources
-        concept_mentions: dict[str, list[str]] = {}
-        for s in sources:
-            content = s.get("content", "")
-            source_ref = s.get("title", s.get("path", s.get("document_id", "unknown")))
-            # Simple concept extraction from headers
-            for line in content.splitlines():
-                if line.startswith("#"):
-                    concept = line.lstrip("#").strip()
-                    if concept and len(concept) > 3:
-                        concept_mentions.setdefault(concept, []).append(source_ref)
-
-        # Concepts mentioned across multiple sources = stronger evidence
-        cross_referenced = {
-            concept: refs
-            for concept, refs in concept_mentions.items()
-            if len(refs) > 1
-        }
-        if cross_referenced:
-            findings.append(Finding(
-                claim="Multiple sources converge on shared concepts",
-                evidence=[f"'{c}' referenced by: {', '.join(r)}" for c, r in list(cross_referenced.items())[:5]],
+        # 2. Extract relevant knowledge from local faculty docs
+        relevant_sections = _find_relevant_sections(all_content, query_terms)
+        if relevant_sections:
+            ctx.add_finding(
+                claim="Existing knowledge base contains relevant material",
+                evidence=[f"[{heading}]: {body[:200]}..." if len(body) > 200 else f"[{heading}]: {body}"
+                          for heading, body in relevant_sections[:5]],
                 confidence=ConfidenceLevel.SUPPORTED,
-                sources=[ref for refs in cross_referenced.values() for ref in refs],
-            ))
+                sources=[s.get("path", s.get("source_node", "")) for s in ctx.local_sources[:5]],
+                limitations=["Extracted from faculty briefs — research priorities, not confirmed findings"],
+            )
 
-        # Cross-domain bridge detection
-        if scope.cross_domain_bridges:
+        # 3. Cross-domain connection scan
+        if len(scope.faculties) > 1 or scope.cross_domain_bridges:
+            faculty_terms: dict[str, set[str]] = {}
+            for s in ctx.local_sources:
+                if s.get("type") == "faculty_document":
+                    fac = s.get("faculty", "")
+                    if fac:
+                        faculty_terms.setdefault(fac, set()).update(_extract_terms(s.get("content", "")))
+
             for fac_a, fac_b in scope.cross_domain_bridges:
-                a_content = " ".join(s.get("content", "") for s in sources if s.get("faculty") == fac_a)
-                b_content = " ".join(s.get("content", "") for s in sources if s.get("faculty") == fac_b)
-                if a_content and b_content:
-                    # Find shared terms between the two faculties
-                    a_words = set(a_content.lower().split()) - _STOP_WORDS
-                    b_words = set(b_content.lower().split()) - _STOP_WORDS
-                    shared = a_words & b_words - _COMMON_WORDS
-                    if shared:
-                        top_shared = sorted(shared, key=lambda w: len(w), reverse=True)[:10]
-                        findings.append(Finding(
-                            claim=f"Cross-domain bridge identified between {fac_a} and {fac_b}",
-                            evidence=[f"Shared concepts: {', '.join(top_shared)}"],
-                            confidence=ConfidenceLevel.PRELIMINARY,
-                            related_domains=[fac_a, fac_b],
-                            limitations=["Based on keyword overlap only — deeper analysis needed"],
-                        ))
+                terms_a = faculty_terms.get(fac_a, set())
+                terms_b = faculty_terms.get(fac_b, set())
+                shared = terms_a & terms_b - _NOISE_TERMS
+                if len(shared) >= 3:
+                    ctx.add_finding(
+                        claim=f"Cross-domain bridge: {fac_a} ↔ {fac_b}",
+                        evidence=[f"Shared concepts ({len(shared)}): {', '.join(sorted(shared, key=len, reverse=True)[:12])}"],
+                        confidence=ConfidenceLevel.PRELIMINARY,
+                        related_domains=[fac_a, fac_b],
+                        limitations=["Term co-occurrence — not semantic analysis"],
+                    )
 
-        # Source quality assessment
-        if sources:
-            findings.append(Finding(
-                claim=f"Source base: {len(sources)} documents from {len(source_types)} source types",
-                evidence=[f"{t}: {c} documents" for t, c in source_types.items()],
-                confidence=ConfidenceLevel.ESTABLISHED,
-                sources=[s.get("title", s.get("path", "unnamed")) for s in sources[:10]],
-            ))
+        # 4. Always: honest gap report
+        gaps = []
+        if not ctx.federation_sources:
+            gaps.append("No federation peer documents accessible")
+        if len(ctx.local_sources) < 2:
+            gaps.append("Thin local source base")
+        gaps.append("Automated structural analysis only — agent-driven deep research recommended")
+        ctx.add_finding(
+            claim="Research gaps and limitations",
+            evidence=gaps,
+            confidence=ConfidenceLevel.ESTABLISHED,
+        )
 
-        return findings
+    def run(self, inquiry: Inquiry, scope: ResearchScope) -> ResearchResult:
+        """Execute KARMA: build context, analyze, produce result."""
+        logger.info("KARMA: '%s'", inquiry.question[:80])
+        inquiry.status = InquiryStatus.IN_RESEARCH
 
+        ctx = self.build_context(inquiry, scope)
+        self.auto_analyze(ctx)
 
-class Synthesizer:
-    """Synthesize findings into a coherent ResearchResult."""
+        inquiry.status = InquiryStatus.IN_REVIEW
+        return self._to_result(ctx)
 
-    def synthesize(self, inquiry: Inquiry, scope: ResearchScope,
-                   findings: list[Finding], sources: list[dict[str, Any]]) -> ResearchResult:
-        """Produce final research result from findings."""
+    def _to_result(self, ctx: ResearchContext) -> ResearchResult:
+        """Convert research context into a publishable result."""
+        inquiry = ctx.inquiry
+        scope = ctx.scope
+        findings = [f for f in ctx.findings if f.evidence]
 
-        # Generate title
-        title = f"Research: {inquiry.question}"
-        if len(title) > 100:
-            title = title[:97] + "..."
+        source_refs = []
+        for s in ctx.all_sources:
+            ref = s.get("path", s.get("source_node", s.get("title", "")))
+            if ref and ref not in source_refs:
+                source_refs.append(ref)
 
-        # Generate abstract
-        finding_claims = [f.claim for f in findings if f.confidence != ConfidenceLevel.UNKNOWN]
-        if finding_claims:
-            abstract = f"Investigation of: {inquiry.question}. "
-            abstract += f"Analysis across {', '.join(scope.faculties)} using {scope.methodology.value} methodology. "
-            abstract += f"{len(findings)} findings produced with overall confidence based on {len(sources)} sources."
-        else:
-            abstract = f"Initial investigation of: {inquiry.question}. Insufficient data for conclusive findings."
+        abstract = f"Analysis of: {inquiry.question}. "
+        abstract += f"Faculties: {', '.join(scope.faculties)}. "
+        abstract += f"Method: {scope.methodology.value}. "
+        abstract += f"{len(findings)} findings from {len(ctx.local_sources)} local + {len(ctx.federation_sources)} federation sources."
 
-        # Identify cross-domain insights
-        cross_insights = []
+        limitations = []
         for f in findings:
-            if len(f.related_domains) > 1:
-                cross_insights.append(f"{f.claim} (domains: {', '.join(f.related_domains)})")
+            for lim in f.limitations:
+                if lim not in limitations:
+                    limitations.append(lim)
 
-        # Identify open questions
-        open_questions = [inquiry.question]  # The original question is always open for deeper research
+        open_questions = [inquiry.question]
         for f in findings:
             if f.confidence in (ConfidenceLevel.PRELIMINARY, ConfidenceLevel.SPECULATIVE):
-                open_questions.append(f"Needs deeper investigation: {f.claim}")
-            for lim in f.limitations:
-                if "needed" in lim.lower() or "further" in lim.lower():
-                    open_questions.append(lim)
+                open_questions.append(f"Investigate further: {f.claim}")
 
-        # Collect all limitations
-        all_limitations = []
-        for f in findings:
-            all_limitations.extend(f.limitations)
-        all_limitations = list(dict.fromkeys(all_limitations))  # Deduplicate preserving order
-
-        # Collect all source references
-        all_sources = []
-        for s in sources:
-            ref = s.get("title", s.get("path", s.get("document_id", "")))
-            if ref and ref not in all_sources:
-                all_sources.append(ref)
+        cross_insights = [f.claim for f in findings if len(f.related_domains) > 1]
 
         return ResearchResult(
             inquiry_id=inquiry.inquiry_id,
-            title=title,
+            title=inquiry.question,
             abstract=abstract,
             findings=findings,
             methodology_used=scope.methodology,
             faculties_involved=scope.faculties,
             cross_domain_insights=cross_insights,
             open_questions=open_questions,
-            limitations=all_limitations,
-            sources=all_sources,
+            limitations=limitations,
+            sources=source_refs,
         )
 
 
-class KarmaPhase:
-    """KARMA: Execute research.
-
-    The engine that does the actual work:
-    1. Collect sources
-    2. Analyze
-    3. Synthesize
-    4. Produce ResearchResult ready for MOKSHA
-    """
-
-    def __init__(self, repo_root: Path):
-        self.repo_root = repo_root
-        self.collector = SourceCollector(repo_root)
-        self.analyzer = Analyzer()
-        self.synthesizer = Synthesizer()
-
-    def run(self, inquiry: Inquiry, scope: ResearchScope) -> ResearchResult:
-        """Execute KARMA for a single scoped inquiry.
-
-        Returns a complete ResearchResult ready for publication.
-        """
-        logger.info("KARMA: Researching '%s'", inquiry.question[:80])
-        inquiry.status = InquiryStatus.IN_RESEARCH
-
-        # 1. Collect sources
-        sources = self.collector.collect(scope)
-
-        # 2. Analyze
-        findings = self.analyzer.analyze(inquiry, scope, sources)
-        logger.info("  Findings: %d", len(findings))
-
-        # 3. Synthesize
-        inquiry.status = InquiryStatus.IN_REVIEW
-        result = self.synthesizer.synthesize(inquiry, scope, findings, sources)
-        logger.info("  Result: '%s' (confidence: %s)", result.title[:60], result.overall_confidence.value)
-
-        return result
+def _extract_terms(text: str) -> set[str]:
+    words = re.findall(r'[a-zA-Z]{4,}', text.lower())
+    return {w for w in words if w not in _STOP_WORDS}
 
 
-# Common words to filter out from cross-domain analysis
+def _find_relevant_sections(content: str, query_terms: set[str]) -> list[tuple[str, str]]:
+    """Find sections in markdown content relevant to query terms."""
+    sections: list[tuple[str, str]] = []
+    current_heading = ""
+    current_lines: list[str] = []
+
+    for line in content.splitlines():
+        if line.startswith("#"):
+            if current_heading and current_lines:
+                body = "\n".join(current_lines).strip()
+                if body:
+                    text_terms = _extract_terms(current_heading + " " + body)
+                    if query_terms & text_terms:
+                        sections.append((current_heading, body))
+            current_heading = line.lstrip("#").strip()
+            current_lines = []
+        else:
+            current_lines.append(line)
+
+    if current_heading and current_lines:
+        body = "\n".join(current_lines).strip()
+        if body and query_terms & _extract_terms(current_heading + " " + body):
+            sections.append((current_heading, body))
+
+    return sections
+
+
 _STOP_WORDS = frozenset({
     "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
     "of", "with", "by", "from", "is", "are", "was", "were", "be", "been",
     "being", "have", "has", "had", "do", "does", "did", "will", "would",
     "could", "should", "may", "might", "can", "shall", "this", "that",
-    "these", "those", "i", "you", "he", "she", "it", "we", "they", "me",
-    "him", "her", "us", "them", "my", "your", "his", "its", "our", "their",
-    "not", "no", "nor", "as", "if", "then", "than", "so", "such", "both",
-    "each", "all", "any", "few", "more", "most", "other", "some", "only",
-    "own", "same", "too", "very", "just", "about", "above", "after", "again",
+    "these", "those", "him", "her", "them", "your", "his", "its", "our",
+    "their", "not", "nor", "as", "if", "then", "than", "so", "such",
+    "both", "each", "all", "any", "few", "more", "most", "other", "some",
+    "only", "own", "same", "too", "very", "just", "about", "above", "after",
     "also", "into", "over", "under", "between", "through", "during", "before",
     "how", "what", "which", "who", "when", "where", "why", "here", "there",
-    "up", "out", "off", "down", "once", "now", "new", "one", "two", "first",
+    "down", "once", "now", "new", "one", "two", "first", "well", "like",
+    "make", "many", "much", "need", "know", "take", "come", "think", "look",
+    "want", "give", "tell", "work", "call", "keep", "help", "talk", "turn",
 })
 
-_COMMON_WORDS = frozenset({
+_NOISE_TERMS = frozenset({
     "research", "systems", "system", "based", "using", "used", "data",
     "analysis", "model", "models", "approach", "methods", "design",
     "process", "development", "knowledge", "understanding", "information",
-    "-", "--", "---", "##", "###", "|", "*", "**",
+    "document", "documents", "faculty", "faculties", "authority",
+    "open", "questions", "core", "scope", "cross", "domain", "connections",
 })
