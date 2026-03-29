@@ -61,7 +61,7 @@ jobs:
       - name: Write heartbeat payload
         run: |
           mkdir -p data/federation
-          echo '[{"agent_id":"agent-research","op":"heartbeat","status":"alive","role":"research_faculty"}]' > data/federation/nadi_outbox.json
+          echo '[{"agent_id":"agent-research","operation":"heartbeat","source":"agent-research","status":"alive","role":"research_faculty"}]' > data/federation/nadi_outbox.json
 
       - name: Relay outbox to steward-federation hub
         if: always()
