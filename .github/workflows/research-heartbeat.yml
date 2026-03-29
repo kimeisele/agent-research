@@ -57,11 +57,16 @@ jobs:
           Automated research engine heartbeat.
           Cycle triggered at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:${GITHUB_REF_NAME}
+
+      - name: Write heartbeat payload
+        run: |
+          mkdir -p data/federation
+          echo '[{"agent_id":"agent-research","op":"heartbeat","status":"alive","role":"research_faculty"}]' > data/federation/nadi_outbox.json
+
       - name: Relay outbox to steward-federation hub
         if: always()
         env:
           GH_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p data/federation
           OUTBOX="data/federation/nadi_outbox.json"
