@@ -33,10 +33,28 @@ jobs:
         run: |
           MAX="${{ github.event.inputs.max_inquiries || '5' }}"
           echo "Running research engine cycle (max: $MAX inquiries)"
-          python -m agent_research.cli run-cycle --max "$MAX" -v
+          python -m agent_research.cli run-cycle --max "$MAX"
 
       - name: Show engine status
         run: python -m agent_research.cli status
+
+      - name: Write heartbeat payload
+        run: |
+          import json
+          from datetime import datetime
+          heartbeat = {
+              "agent_id": "agent-research",
+              "op": "heartbeat",
+              "ts": datetime.utcnow().isoformat() + "Z",
+              "status": "alive",
+              "role": "research_faculty"
+          }
+          import pathlib
+          pathlib.Path("data/federation").mkdir(parents=True, exist_ok=True)
+          with open("data/federation/nadi_outbox.json", "w") as f:
+              json.dump([heartbeat], f, indent=2)
+          print("Heartbeat payload written")
+        shell: python
 
       - name: Commit results
         run: |
@@ -57,3 +75,36 @@ jobs:
           Automated research engine heartbeat.
           Cycle triggered at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:${GITHUB_REF_NAME}
+
+      - name: Relay outbox to steward-federation hub
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p data/federation
+          OUTBOX="data/federation/nadi_outbox.json"
+
+          if [ ! -f "$OUTBOX" ]; then
+            echo "[]" > "$OUTBOX"
+            echo "Created empty outbox file"
+          fi
+
+          if [ "$(cat "$OUTBOX" | tr -d '[:space:]')" = "[]" ]; then
+            echo "Outbox empty, skipping relay"
+            exit 0
+          fi
+
+          git clone --depth=1 https://x-access-token:${GH_TOKEN}@github.com/kimeisele/steward-federation.git /tmp/hub 2>&1 || { echo "Clone failed"; exit 0; }
+
+          mkdir -p /tmp/hub/nadi
+          cp "$OUTBOX" /tmp/hub/nadi/agent-research_to_steward.json
+
+          cd /tmp/hub
+          git config user.name "research-bot"
+          git config user.email "bot@agent-research"
+          git add nadi/agent-research_to_steward.json
+          git diff --cached --quiet || git commit -m "relay: agent-research outbox → steward (heartbeat #${{ github.run_number }})"
+          git push || echo "Push failed, continuing..."
+
+          echo "[]" > "$OUTBOX"
+          echo "Outbox cleared after successful relay"
