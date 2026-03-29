@@ -31,5 +31,517 @@
     "nadi_priority": "rajas",
     "ttl_ms": 900000,
     "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce38cdd011495b6b41c93254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f36521457c0ad31d84944ca"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "agent-city",
+        "checks": [
+          "repo_accessible",
+          "ci_"
+        ],
+        "last_ci": {
+          "conclusion": "",
+          "name": "Manifest World Wiki"
+        },
+        "last_push": "2026-03-28T05:59:55Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "agent-city",
+      "trust": 0.3
+    },
+    "priority": 1,
+    "correlation_id": "2c221d4e-b4fc-4a39-bb7e-7ad6e214554c",
+    "timestamp": 1774768432.0636137,
+    "ttl_s": 900.0,
+    "envelope_id": "2c221d4e-b4fc-4a39-bb7e-7ad6e214554c",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "heartbeat",
+    "payload": {
+      "agent_id": "ag_92685a9dda9c330d",
+      "capabilities": [
+        "code_analysis",
+        "task_execution",
+        "ci_automation",
+        "federation_bridge",
+        "autonomous_daemon",
+        "proactive_pr",
+        "cross_repo_healing",
+        "authority_feed"
+      ],
+      "fingerprint": "ba8429a39e537cb86305b4438d0293c04ff7f286fd7a403cf20a232ba2599c7e",
+      "health": 0.825,
+      "repo": "kimeisele/steward",
+      "timestamp": 1774718825.9726021,
+      "version": "0.17.0"
+    },
+    "priority": 1,
+    "correlation_id": "d6cc9cd1-01b4-46d1-93ce-dc353b8ea3f7",
+    "timestamp": 1774769943.3956792,
+    "ttl_s": 900.0,
+    "envelope_id": "d6cc9cd1-01b4-46d1-93ce-dc353b8ea3f7",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce38cdd011495b6b41c93254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f36521457c0ad31d84944ca"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "agent-world",
+        "checks": [
+          "repo_accessible",
+          "ci_success"
+        ],
+        "last_ci": {
+          "conclusion": "success",
+          "name": "World Heartbeat"
+        },
+        "last_push": "2026-03-28T17:09:03Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "agent-world",
+      "trust": 0.09999999999999998
+    },
+    "priority": 1,
+    "correlation_id": "87bae56d-2815-4b18-80be-277fa2066c41",
+    "timestamp": 1774771215.1612742,
+    "ttl_s": 900.0,
+    "envelope_id": "87bae56d-2815-4b18-80be-277fa2066c41",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "steward",
+        "checks": [
+          "repo_accessible",
+          "ci_"
+        ],
+        "last_ci": {
+          "conclusion": "",
+          "name": "Steward Heartbeat"
+        },
+        "last_push": "2026-03-28T17:09:44Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "steward",
+      "trust": 0.09999999999999998
+    },
+    "priority": 1,
+    "correlation_id": "c5f24c01-9135-4a07-bc06-bf986cef463a",
+    "timestamp": 1774772496.155231,
+    "ttl_s": 900.0,
+    "envelope_id": "c5f24c01-9135-4a07-bc06-bf986cef463a",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "steward-protocol",
+        "checks": [
+          "repo_accessible",
+          "ci_success"
+        ],
+        "last_ci": {
+          "conclusion": "success",
+          "name": "\ud83c\udfd9\ufe0f Scheduled Agent Operations"
+        },
+        "last_push": "2026-03-22T16:24:12Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "steward-protocol",
+      "trust": 0.09999999999999998
+    },
+    "priority": 1,
+    "correlation_id": "4a62aec2-a471-43f6-9cc2-0d39b824c46d",
+    "timestamp": 1774774099.0826936,
+    "ttl_s": 900.0,
+    "envelope_id": "4a62aec2-a471-43f6-9cc2-0d39b824c46d",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "steward-federation",
+        "checks": [
+          "repo_accessible",
+          "ci_success"
+        ],
+        "last_ci": {
+          "conclusion": "success",
+          "name": "CI"
+        },
+        "last_push": "2026-03-28T17:13:22Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "steward-federation",
+      "trust": 0.09999999999999998
+    },
+    "priority": 1,
+    "correlation_id": "c043bc7f-77ef-41f4-973c-fadaa030fba6",
+    "timestamp": 1774775905.3729935,
+    "ttl_s": 900.0,
+    "envelope_id": "c043bc7f-77ef-41f4-973c-fadaa030fba6",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "steward-gateway",
+        "checks": [
+          "repo_accessible"
+        ],
+        "last_push": "2026-02-22T15:36:52Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "steward-gateway",
+      "trust": 0.0
+    },
+    "priority": 1,
+    "correlation_id": "37f85a63-6441-4bef-bff3-c6c018016d50",
+    "timestamp": 1774777660.7503827,
+    "ttl_s": 900.0,
+    "envelope_id": "37f85a63-6441-4bef-bff3-c6c018016d50",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "agent-city",
+        "checks": [
+          "repo_accessible",
+          "ci_failure"
+        ],
+        "last_ci": {
+          "conclusion": "failure",
+          "name": "Agent City Heartbeat"
+        },
+        "last_push": "2026-03-28T05:59:55Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "agent-city",
+      "trust": 0.3
+    },
+    "priority": 1,
+    "correlation_id": "b5af9d45-6558-432e-8f22-d993ddb1e63f",
+    "timestamp": 1774779303.5194368,
+    "ttl_s": 900.0,
+    "envelope_id": "b5af9d45-6558-432e-8f22-d993ddb1e63f",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "heartbeat",
+    "payload": {
+      "agent_id": "ag_92685a9dda9c330d",
+      "capabilities": [
+        "code_analysis",
+        "task_execution",
+        "ci_automation",
+        "federation_bridge",
+        "autonomous_daemon",
+        "proactive_pr",
+        "cross_repo_healing",
+        "authority_feed"
+      ],
+      "fingerprint": "ba8429a39e537cb86305b4438d0293c04ff7f286fd7a403cf20a232ba2599c7e",
+      "health": 0.825,
+      "repo": "kimeisele/steward",
+      "timestamp": 1774720209.821675,
+      "version": "0.17.0"
+    },
+    "priority": 1,
+    "correlation_id": "70570405-3f97-41a4-aaac-d99eb73f0ddc",
+    "timestamp": 1774780413.854593,
+    "ttl_s": 900.0,
+    "envelope_id": "70570405-3f97-41a4-aaac-d99eb73f0ddc",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce38cdd011495b6b41c93254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f36521457c0ad31d84944ca"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "agent-world",
+        "checks": [
+          "repo_accessible",
+          "ci_success"
+        ],
+        "last_ci": {
+          "conclusion": "success",
+          "name": "World Heartbeat"
+        },
+        "last_push": "2026-03-28T17:42:30Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "agent-world",
+      "trust": 0.09999999999999998
+    },
+    "priority": 1,
+    "correlation_id": "a4c8c028-bbff-4fa3-930c-3672fbab4a66",
+    "timestamp": 1774781902.0644705,
+    "ttl_s": 900.0,
+    "envelope_id": "a4c8c028-bbff-4fa3-930c-3672fbab4a66",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "steward",
+        "checks": [
+          "repo_accessible",
+          "ci_success"
+        ],
+        "last_ci": {
+          "conclusion": "success",
+          "name": "Steward Heartbeat"
+        },
+        "last_push": "2026-03-28T17:29:59Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "steward",
+      "trust": 0.09999999999999998
+    },
+    "priority": 1,
+    "correlation_id": "10872669-ba6f-4b9b-a537-30c29fc716d4",
+    "timestamp": 1774782902.2718148,
+    "ttl_s": 900.0,
+    "envelope_id": "10872669-ba6f-4b9b-a537-30c29fc716d4",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "steward-protocol",
+        "checks": [
+          "repo_accessible",
+          "ci_success"
+        ],
+        "last_ci": {
+          "conclusion": "success",
+          "name": "\ud83c\udfd9\ufe0f Scheduled Agent Operations"
+        },
+        "last_push": "2026-03-22T16:24:12Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "steward-protocol",
+      "trust": 0.09999999999999998
+    },
+    "priority": 1,
+    "correlation_id": "ecd97c58-02d8-4dc1-ab96-425eae63c80a",
+    "timestamp": 1774783968.8716388,
+    "ttl_s": 900.0,
+    "envelope_id": "ecd97c58-02d8-4dc1-ab96-425eae63c80a",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "heartbeat",
+    "payload": {
+      "agent_id": "ag_92685a9dda9c330d",
+      "capabilities": [
+        "code_analysis",
+        "task_execution",
+        "ci_automation",
+        "federation_bridge",
+        "autonomous_daemon",
+        "proactive_pr",
+        "cross_repo_healing",
+        "authority_feed"
+      ],
+      "fingerprint": "ba8429a39e537cb86305b4438d0293c04ff7f286fd7a403cf20a232ba2599c7e",
+      "health": 0.9393294494544437,
+      "repo": "kimeisele/steward",
+      "timestamp": 1774721372.225394,
+      "version": "0.17.0"
+    },
+    "priority": 1,
+    "correlation_id": "9c5a1c19-8986-47dc-a693-042fae06e5ce",
+    "timestamp": 1774784487.0051124,
+    "ttl_s": 900.0,
+    "envelope_id": "9c5a1c19-8986-47dc-a693-042fae06e5ce",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce38cdd011495b6b41c93254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f36521457c0ad31d84944ca"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "agent-city",
+        "checks": [
+          "repo_accessible",
+          "ci_failure"
+        ],
+        "last_ci": {
+          "conclusion": "failure",
+          "name": "Agent City Heartbeat"
+        },
+        "last_push": "2026-03-28T05:59:55Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "agent-city",
+      "trust": 0.09999999999999998
+    },
+    "priority": 1,
+    "correlation_id": "00ed0cb9-69db-4166-a0f3-310dd9809f9f",
+    "timestamp": 1774785274.8677738,
+    "ttl_s": 900.0,
+    "envelope_id": "00ed0cb9-69db-4166-a0f3-310dd9809f9f",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "heartbeat",
+    "payload": {
+      "agent_id": "ag_92685a9dda9c330d",
+      "capabilities": [
+        "code_analysis",
+        "task_execution",
+        "ci_automation",
+        "federation_bridge",
+        "autonomous_daemon",
+        "proactive_pr",
+        "cross_repo_healing",
+        "authority_feed"
+      ],
+      "fingerprint": "ba8429a39e537cb86305b4438d0293c04ff7f286fd7a403cf20a232ba2599c7e",
+      "health": 0.9393294494544437,
+      "repo": "kimeisele/steward",
+      "timestamp": 1774721477.7731578,
+      "version": "0.17.0"
+    },
+    "priority": 1,
+    "correlation_id": "f05f7234-2fd2-4d34-a2df-8de4a53c8f90",
+    "timestamp": 1774786762.9957094,
+    "ttl_s": 900.0,
+    "envelope_id": "f05f7234-2fd2-4d34-a2df-8de4a53c8f90",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce38cdd011495b6b41c93254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f36521457c0ad31d84944ca"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "heartbeat",
+    "payload": {
+      "agent_id": "ag_92685a9dda9c330d",
+      "capabilities": [
+        "code_analysis",
+        "task_execution",
+        "ci_automation",
+        "federation_bridge",
+        "autonomous_daemon",
+        "proactive_pr",
+        "cross_repo_healing",
+        "authority_feed"
+      ],
+      "fingerprint": "ba8429a39e537cb86305b4438d0293c04ff7f286fd7a403cf20a232ba2599c7e",
+      "health": 0.9393294494544437,
+      "repo": "kimeisele/steward",
+      "timestamp": 1774721486.231074,
+      "version": "0.17.0"
+    },
+    "priority": 1,
+    "correlation_id": "b80b5155-45ff-47d3-b261-b604be31a9a6",
+    "timestamp": 1774788582.5878599,
+    "ttl_s": 900.0,
+    "envelope_id": "b80b5155-45ff-47d3-b261-b604be31a9a6",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce38cdd011495b6b41c93254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f36521457c0ad31d84944ca"
   }
 ]
