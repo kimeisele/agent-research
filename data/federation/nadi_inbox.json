@@ -224,5 +224,32 @@
     "nadi_priority": "rajas",
     "ttl_ms": 900000,
     "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "diagnostic": {
+        "agent_id": "steward-gateway",
+        "checks": [
+          "repo_accessible"
+        ],
+        "last_push": "2026-02-22T15:36:52Z"
+      },
+      "steward_action": "suspect_investigation",
+      "target_peer": "steward-gateway",
+      "trust": 0.0
+    },
+    "priority": 1,
+    "correlation_id": "37f85a63-6441-4bef-bff3-c6c018016d50",
+    "timestamp": 1774777660.7503827,
+    "ttl_s": 900.0,
+    "envelope_id": "37f85a63-6441-4bef-bff3-c6c018016d50",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
   }
 ]
