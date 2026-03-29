@@ -2,7 +2,7 @@ name: Research Engine Heartbeat
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # Every 15 minutes, synced with federation relay
+    - cron: '4-59/15 * * * *'   # Every 15 minutes, synced with federation relay
   workflow_dispatch:
     inputs:
       max_inquiries:
