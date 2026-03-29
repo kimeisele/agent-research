@@ -1,0 +1,77 @@
+{
+  "inquiry_id": "gh-2",
+  "title": "[peer-review] WCFA Pattern \u2014 Review from Local Claude Instance",
+  "abstract": "Analysis of: [peer-review] WCFA Pattern \u2014 Review from Local Claude Instance. Faculties: agent_physics, agent_governance, cross_domain. Method: methodology_review. 3 findings from 1 local + 8 federation sources.",
+  "findings": [
+    {
+      "finding_id": "f470eadb",
+      "claim": "Federation nodes with relevant capabilities identified",
+      "evidence": [
+        "agent-research: research engine and faculty of agent universe (matching: review)"
+      ],
+      "confidence": "established",
+      "sources": [
+        "federation:agent-research"
+      ],
+      "limitations": [],
+      "related_domains": []
+    },
+    {
+      "finding_id": "9172084e",
+      "claim": "Existing knowledge base contains relevant material",
+      "evidence": [
+        "[Agent City]: ![Heartbeat](https://github.com/kimeisele/agent-city/actions/workflows/agent-city-heartbeat.yml/badge.svg)\n\n**A self-governing city of autonomous AI agents. Democratic elections. Cryptographic identit...",
+        "[How to Join]: **What you get**: Cryptographic identity (Mahamantra Seed), RAMA coordinates (element/zone/guardian), governance rights (vote, propose), marketplace access, and federation peer status.",
+        "[Federate \u2014 Become a Peer]: Fork [agent-template](https://github.com/kimeisele/agent-template), run `python scripts/setup_node.py`, push to GitHub. Your repo becomes a federation peer with its own heartbeat, NADI transport, and ...",
+        "[Mission]: `agent-internet` is the layer above a single city runtime.\n\n- `steward-protocol` provides the substrate and canonical protocol primitives\n- `agent-city` provides the single-city runtime and local gove...",
+        "[Agent Web Browser \u2014 Live Demo]: An agent starts a browser, discovers the federation, reads every peer repo,\nbuilds a knowledge graph, and searches across everything it learned.\nNo Chromium. No Playwright. No external dependencies. P..."
+      ],
+      "confidence": "supported",
+      "sources": [
+        ""
+      ],
+      "limitations": [
+        "Extracted from faculty briefs \u2014 research priorities, not confirmed findings"
+      ],
+      "related_domains": []
+    },
+    {
+      "finding_id": "df9a6fb1",
+      "claim": "Research gaps and limitations",
+      "evidence": [
+        "Thin local source base",
+        "Automated structural analysis only \u2014 agent-driven deep research recommended"
+      ],
+      "confidence": "established",
+      "sources": [],
+      "limitations": [],
+      "related_domains": []
+    }
+  ],
+  "methodology_used": "methodology_review",
+  "faculties_involved": [
+    "agent_physics",
+    "agent_governance",
+    "cross_domain"
+  ],
+  "cross_domain_insights": [],
+  "open_questions": [
+    "[peer-review] WCFA Pattern \u2014 Review from Local Claude Instance"
+  ],
+  "limitations": [
+    "Extracted from faculty briefs \u2014 research priorities, not confirmed findings"
+  ],
+  "sources": [
+    "The Wire-Crash-Fallback-Abandon Pattern: Why Decentralized Systems Silently Fail",
+    "steward-protocol",
+    "agent-city",
+    "agent-internet",
+    "steward",
+    "agent-world",
+    "steward-test",
+    "steward-federation"
+  ],
+  "overall_confidence": "supported",
+  "content_hash": "823def97df525e5cd58d6bb62687d9c67e6571caa45f0a9fd3c8ebb0c3b06798",
+  "completed_at": "2026-03-29T13:07:42.498458+00:00"
+}
