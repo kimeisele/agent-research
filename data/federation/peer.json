@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "city_id": "agent-research",
+    "slug": "agent-research",
+    "repo": "kimeisele/agent-research",
+    "node_id": "ag_research_01"
+  },
+  "capabilities": [
+    "research",
+    "federation_relay"
+  ],
+  "nadi": {
+    "outbox": "data/federation/nadi_outbox.json",
+    "inbox": "data/federation/nadi_inbox.json"
+  }
+}
