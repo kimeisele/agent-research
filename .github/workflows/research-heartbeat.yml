@@ -60,8 +60,9 @@ jobs:
 
       - name: Write heartbeat payload
         run: |
-          mkdir -p data/federation
-          echo '[{"agent_id":"agent-research","operation":"heartbeat","source":"agent-research","status":"alive","role":"research_faculty"}]' > data/federation/nadi_outbox.json
+            pip install -q 'git+https://github.com/kimeisele/steward-federation.git' 2>/dev/null || true
+            mkdir -p data/federation
+            nadi --peer-json data/federation/peer.json heartbeat --health 1.0
 
       - name: Relay outbox to steward-federation hub
         if: always()
@@ -110,8 +111,9 @@ jobs:
 
       - name: Write heartbeat payload
         run: |
-          mkdir -p data/federation
-          echo '[{"agent_id":"agent-research","operation":"heartbeat","source":"agent-research","status":"alive","role":"research_faculty"}]' > data/federation/nadi_outbox.json
+            pip install -q 'git+https://github.com/kimeisele/steward-federation.git' 2>/dev/null || true
+            mkdir -p data/federation
+            nadi --peer-json data/federation/peer.json heartbeat --health 1.0
 
       - name: Relay outbox to steward-federation hub
         if: always()
