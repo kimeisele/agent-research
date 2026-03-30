@@ -3,3 +3,5 @@ __pycache__/
 .authority-feed-out/
 data/cycle_history.json
 data/source_cache/
+# Node crypto keys — never commit
+data/federation/.node_keys.json
