@@ -1,0 +1,102 @@
+{
+  "artifact_paths": {
+    "canonical_surface": ".authority-exports/canonical-surface.json",
+    "public_summary_registry": ".authority-exports/public-summary-registry.json",
+    "source_surface_registry": ".authority-exports/source-surface-registry.json",
+    "surface_metadata": ".authority-exports/surface-metadata.json"
+  },
+  "authority_exports": [
+    {
+      "artifact_uri": ".authority-exports/canonical-surface.json",
+      "content_sha256": "b803b62a5af639fd9e95f3b3034a7ad70568b6fcff40c990396a3970b1f0f25e",
+      "contract_version": 1,
+      "export_id": "agent-research/canonical_surface",
+      "export_kind": "canonical_surface",
+      "generated_at": 0.0,
+      "labels": {
+        "source_sha": "1bbc33057df1064003181a5d640c22db0be30335"
+      },
+      "repo_id": "agent-research",
+      "version": "1bbc33057df1064003181a5d640c22db0be30335"
+    },
+    {
+      "artifact_uri": ".authority-exports/public-summary-registry.json",
+      "content_sha256": "2bfd49dae6ab07e7a62115ec299c334611c4ab024ace98423abde6850fa0ff50",
+      "contract_version": 1,
+      "export_id": "agent-research/public_summary_registry",
+      "export_kind": "public_summary_registry",
+      "generated_at": 0.0,
+      "labels": {
+        "source_sha": "1bbc33057df1064003181a5d640c22db0be30335"
+      },
+      "repo_id": "agent-research",
+      "version": "1bbc33057df1064003181a5d640c22db0be30335"
+    },
+    {
+      "artifact_uri": ".authority-exports/source-surface-registry.json",
+      "content_sha256": "54a2c217fdbe4f0a8da7a42180cecdce49489a99f44d3c3c6e5e61935b05efa8",
+      "contract_version": 1,
+      "export_id": "agent-research/source_surface_registry",
+      "export_kind": "source_surface_registry",
+      "generated_at": 0.0,
+      "labels": {
+        "source_sha": "1bbc33057df1064003181a5d640c22db0be30335"
+      },
+      "repo_id": "agent-research",
+      "version": "1bbc33057df1064003181a5d640c22db0be30335"
+    },
+    {
+      "artifact_uri": ".authority-exports/surface-metadata.json",
+      "content_sha256": "fa5957ad16fb8b347f8db0930e30f2c277c2917d71c671b2c01c0c3180dbac13",
+      "contract_version": 1,
+      "export_id": "agent-research/surface_metadata",
+      "export_kind": "surface_metadata",
+      "generated_at": 0.0,
+      "labels": {
+        "source_sha": "1bbc33057df1064003181a5d640c22db0be30335"
+      },
+      "repo_id": "agent-research",
+      "version": "1bbc33057df1064003181a5d640c22db0be30335"
+    }
+  ],
+  "contract_version": 1,
+  "document_count": 11,
+  "faculties": [
+    "computation-intelligence",
+    "energy-sustainability",
+    "health-medicine",
+    "cross-domain",
+    "physics-fundamental",
+    "philosophy-ethics",
+    "biology-ecology"
+  ],
+  "generated_at": 0.0,
+  "kind": "source_authority_bundle",
+  "repo_role": {
+    "consumes": [
+      "research_question",
+      "raw_data_feed",
+      "domain_observation",
+      "inquiry_request",
+      "peer_review_challenge"
+    ],
+    "exports": [
+      "canonical_surface",
+      "public_summary_registry",
+      "source_surface_registry",
+      "surface_metadata"
+    ],
+    "labels": {
+      "display_name": "Research Engine & Faculty of Agent Universe",
+      "node_role": "research_engine_faculty"
+    },
+    "owner_boundary": "agent_research_surface",
+    "publication_targets": [
+      "agent-research-public-wiki",
+      "agent-research-research-feed"
+    ],
+    "repo_id": "agent-research",
+    "role": "research_engine_faculty"
+  },
+  "source_sha": "1bbc33057df1064003181a5d640c22db0be30335"
+}
