@@ -19,14 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Restore node keys cache
-        uses: actions/cache/restore@v4
-        with:
-          path: data/federation/.node_keys.json
-          key: node-keys-${{ github.repository }}-v1
-          restore-keys: |
-            node-keys-${{ github.repository }}-
         with:
           fetch-depth: 0
 
@@ -66,11 +58,29 @@ jobs:
           Cycle triggered at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:${GITHUB_REF_NAME}
 
-      - name: Write heartbeat payload
+      - name: Restore node keys cache
+        uses: actions/cache/restore@v4
+        with:
+          path: data/federation/.node_keys.json
+          key: node-keys-${{ github.repository }}-v1
+          restore-keys: |
+            node-keys-${{ github.repository }}-
+
+      - name: Install nadi-kit (federation heartbeat)
+        env:
+          GH_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
         run: |
-            pip install -q 'git+https://github.com/kimeisele/steward-federation.git' 2>/dev/null || true
-            mkdir -p data/federation
-            nadi --peer-json data/federation/peer.json heartbeat --health 1.0
+          python -m pip install --upgrade "git+https://${GH_TOKEN}@github.com/kimeisele/steward-federation.git#egg=nadi-kit"
+
+      - name: Run NADI heartbeat cycle
+        env:
+          GH_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          nadi sync
+          nadi heartbeat
+          nadi sync
+          echo "Heartbeat + sync complete"
 
       - name: Save node keys cache
         if: always()
@@ -106,7 +116,7 @@ jobs:
           git config user.name "federation-bot"
           git config user.email "bot@federation"
           git add nadi/agent-research_to_steward.json
-          git diff --cached --quiet || git commit -m "relay: agent-research outbox → steward (cycle #${{ github.run_number }})"
+          git diff --cached --quiet || git commit -m "relay: agent-research outbox → steward (heartbeat #${{ github.run_number }})"
           max_retries=10
           count=0
           until git push origin main; do
@@ -121,44 +131,5 @@ jobs:
             git pull --rebase origin main
           done
 
-          echo "[]" > "$OUTBOX"
-          echo "Outbox relayed and cleared"
-
-      - name: Write heartbeat payload
-        run: |
-            pip install -q 'git+https://github.com/kimeisele/steward-federation.git' 2>/dev/null || true
-            mkdir -p data/federation
-            nadi --peer-json data/federation/peer.json heartbeat --health 1.0
-
-      - name: Relay outbox to steward-federation hub
-        if: always()
-        env:
-          GH_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
-        run: |
-          mkdir -p data/federation
-          OUTBOX="data/federation/nadi_outbox.json"
-          
-          if [ ! -f "$OUTBOX" ]; then
-            echo "[]" > "$OUTBOX"
-          fi
-          
-          if [ "$(cat "$OUTBOX" | tr -d '[:space:]')" = "[]" ]; then
-            echo "Outbox empty, skipping relay"
-            exit 0
-          fi
-          
-          git clone --depth=1 https://x-access-token:${GH_TOKEN}@github.com/kimeisele/steward-federation.git /tmp/hub
-          
-          mkdir -p /tmp/hub/nadi
-          
-          cp "$OUTBOX" /tmp/hub/nadi/agent-research_to_steward.json
-          
-          cd /tmp/hub
-          git config user.name "federation-bot"
-          git config user.email "bot@federation"
-          git add nadi/agent-research_to_steward.json
-          git diff --cached --quiet || git commit -m "relay: agent-research outbox → steward (cycle #${{ github.run_number }})"
-          git push || echo "Push failed, continuing..."
-          
           echo "[]" > "$OUTBOX"
           echo "Outbox relayed and cleared"
