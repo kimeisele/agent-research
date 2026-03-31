@@ -2385,5 +2385,35 @@
     "nadi_priority": "rajas",
     "ttl_ms": 900000,
     "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "heartbeat",
+    "payload": {
+      "agent_id": "ag_e3331b8d3b0d20a7",
+      "capabilities": [
+        "code_analysis",
+        "task_execution",
+        "ci_automation",
+        "federation_bridge",
+        "autonomous_daemon"
+      ],
+      "fingerprint": "ba8429a39e537cb86305b4438d0293c04ff7f286fd7a403cf20a232ba2599c7e",
+      "health": 0.857393029192283,
+      "repo": "kimeisele/steward",
+      "timestamp": 1774928620.6484969,
+      "version": "0.17.0"
+    },
+    "priority": 1,
+    "correlation_id": "be665a7d-5c9e-445a-b016-5c911872b423",
+    "timestamp": 1774930581.5116746,
+    "ttl_s": 900.0,
+    "envelope_id": "be665a7d-5c9e-445a-b016-5c911872b423",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce38cdd011495b6b41c93254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f36521457c0ad31d84944ca"
   }
 ]
