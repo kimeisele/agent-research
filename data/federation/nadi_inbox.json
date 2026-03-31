@@ -2625,5 +2625,31 @@
     "nadi_priority": "rajas",
     "ttl_ms": 900000,
     "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce38cdd011495b6b41c93254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f36521457c0ad31d84944ca"
+  },
+  {
+    "source": "steward",
+    "target": "agent-research",
+    "operation": "diagnostic_report",
+    "payload": {
+      "target_peer": "ag_e3331b8d3b0d20a7",
+      "diagnostic": {
+        "agent_id": "ag_e3331b8d3b0d20a7",
+        "checks": [
+          "repo_inaccessible"
+        ]
+      },
+      "steward_action": "suspect_investigation",
+      "trust": 0.8
+    },
+    "priority": 1,
+    "correlation_id": "9b8b8466-d956-45e8-a90b-b040e3608098",
+    "timestamp": 1774947734.7370214,
+    "ttl_s": 900.0,
+    "envelope_id": "9b8b8466-d956-45e8-a90b-b040e3608098",
+    "nadi_type": "vyana",
+    "nadi_op": "send",
+    "nadi_priority": "rajas",
+    "ttl_ms": 900000,
+    "maha_header_hex": "238e10b6e43f4887d9144c1694789f0e892146de640dce383d6af09f914cf4623254e39acee73322d0038f39d6b97d84a0bb0d0000000000ab47c7a58f365214a77a4ce7126ef161"
   }
 ]
