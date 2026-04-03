@@ -1,0 +1,92 @@
+{
+  "inquiry_id": "1264f2498cdc",
+  "title": "How should federation descriptors distinguish between capability exists in code and capability is active in production?",
+  "abstract": "Analysis of: How should federation descriptors distinguish between capability exists in code and capability is active in production?. Faculties: agent_governance, agent_physics. Method: synthesis. 3 findings from 529 local + 8 federation sources.",
+  "findings": [
+    {
+      "finding_id": "0558eeea",
+      "claim": "Federation nodes with relevant capabilities identified",
+      "evidence": [
+        "agent-city: Autonomous AI agent city \u2014 democratic governance, cryptographic identity, federation relay. Join via GitHub Issue. (matching: code, federation)",
+        "agent-internet: Federation control plane for Agent City mesh networking, discovery, routing, trust, and inter-city coordination (matching: federation)",
+        "steward-test: Steward federation test sandbox \u2014 intentionally sick repo for healing pipeline validation (matching: federation)",
+        "steward: Steward \u2014 Autonomous Agent Engine (Open-Claw architecture) (matching: code, federation)",
+        "steward-federation: Federation nadi transport hub \u2014 shared state for steward agent mesh (matching: federation)"
+      ],
+      "confidence": "established",
+      "sources": [
+        "federation:agent-city",
+        "federation:agent-internet",
+        "federation:steward-test",
+        "federation:steward",
+        "federation:steward-federation"
+      ],
+      "limitations": [],
+      "related_domains": []
+    },
+    {
+      "finding_id": "9f88b70d",
+      "claim": "Existing knowledge base contains relevant material",
+      "evidence": [
+        "[The Operating System for AI Agents]: **Cryptographic Identity + Governance for AI Agents. A.G.I. Infrastructure.**\n\n[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](https://github.com/kimeisele/steward-protocol/releases)...",
+        "[The Kernel]: This is a real kernel implementation (`vibe_core/kernel_impl.py`):\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                      HUMAN OPERATOR                          ...",
+        "[Core Components]: | Component | Purpose |\n|-----------|---------|\n| **Kernel** (`kernel_impl.py`) | Process table, scheduler, ledger integration |\n| **Ledger** (`ledger.py`) | Append-only cryptographic event chain |\n| ...",
+        "[The Constitution ([CONSTITUTION.md](CONSTITUTION.md))]: | Article | Principle | Enforcement |\n|---------|-----------|-------------|\n| **I: Identity** | No action without cryptographic proof | Unsigned messages dropped |\n| **II: Auditability** | Every decis...",
+        "[Security Test Suite]: The `tests/hardening/` suite includes attack simulations:\n\n| Test | Attack Type |\n|------|-------------|\n| `test_red_team_attacks.py` | Identity spoofing, capability bypass |\n| `test_halahala_poison.p..."
+      ],
+      "confidence": "supported",
+      "sources": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "limitations": [
+        "Extracted from faculty briefs \u2014 research priorities, not confirmed findings"
+      ],
+      "related_domains": []
+    },
+    {
+      "finding_id": "a56fede3",
+      "claim": "Research gaps and limitations",
+      "evidence": [
+        "Automated structural analysis only \u2014 agent-driven deep research recommended"
+      ],
+      "confidence": "established",
+      "sources": [],
+      "limitations": [],
+      "related_domains": []
+    }
+  ],
+  "methodology_used": "synthesis",
+  "faculties_involved": [
+    "agent_governance",
+    "agent_physics"
+  ],
+  "cross_domain_insights": [],
+  "open_questions": [
+    "How should federation descriptors distinguish between capability exists in code and capability is active in production?"
+  ],
+  "limitations": [
+    "Extracted from faculty briefs \u2014 research priorities, not confirmed findings"
+  ],
+  "sources": [
+    "Can execution-path tracing be standardized across federation nodes as a trust verification mechanism?",
+    "What is the minimum viable governance verification a peer should demand before trusting another node?",
+    "How should federation descriptors distinguish between capability exists in code and capability is active in production?",
+    "Does the WCFA pattern scale differently in larger federations?",
+    "[peer-review] WCFA Pattern \u2014 Review from Local Claude Instance",
+    "The Wire-Crash-Fallback-Abandon Pattern: Why Decentralized Systems Silently Fail",
+    "steward-protocol",
+    "agent-city",
+    "agent-internet",
+    "agent-world",
+    "steward-test",
+    "steward",
+    "steward-federation"
+  ],
+  "overall_confidence": "supported",
+  "content_hash": "a821b0f73204838140711015455730527bc53b959ada1584cadaf20e7d696758",
+  "completed_at": "2026-04-03T22:48:06.258157+00:00"
+}
