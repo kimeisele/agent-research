@@ -1,0 +1,30 @@
+{
+  "artifacts": {
+    ".authority-exports/canonical-surface.json": {
+      "path": "bundles/bc18fc78eb39368745eb885d53ba5f2f5439fc2f/.authority-exports/canonical-surface.json",
+      "sha256": "170537cca74c89fa051083f5613027838507f2f58c8d39e590e3f23d336297c5"
+    },
+    ".authority-exports/public-summary-registry.json": {
+      "path": "bundles/bc18fc78eb39368745eb885d53ba5f2f5439fc2f/.authority-exports/public-summary-registry.json",
+      "sha256": "daedce86bfbecb7abe1815cc6190ddb2a438f2066fe84b796f4859b26c22e7e6"
+    },
+    ".authority-exports/source-surface-registry.json": {
+      "path": "bundles/bc18fc78eb39368745eb885d53ba5f2f5439fc2f/.authority-exports/source-surface-registry.json",
+      "sha256": "24fa0e749218149077cd318963a78534beb3e613814261daf03aa47fe66beb90"
+    },
+    ".authority-exports/surface-metadata.json": {
+      "path": "bundles/bc18fc78eb39368745eb885d53ba5f2f5439fc2f/.authority-exports/surface-metadata.json",
+      "sha256": "a0c0dc996c682d96157931394da680b596b89c32a968f02fa9d2342d9cdd4216"
+    }
+  },
+  "bundle": {
+    "kind": "source_authority_bundle",
+    "path": "bundles/bc18fc78eb39368745eb885d53ba5f2f5439fc2f/source-authority-bundle.json",
+    "sha256": "5a018a20d5ac29cd279f337635e3a593f93a04b72ba21b03efabb6674e967dbc"
+  },
+  "contract_version": 1,
+  "generated_at": 0.0,
+  "kind": "source_authority_feed_manifest",
+  "source_repo_id": "agent-research",
+  "source_sha": "bc18fc78eb39368745eb885d53ba5f2f5439fc2f"
+}
