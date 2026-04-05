@@ -1,0 +1,85 @@
+{
+  "inquiry_id": "90cd8851f202",
+  "title": "What is the minimum viable governance verification a peer should demand before trusting another node?",
+  "abstract": "Analysis of: What is the minimum viable governance verification a peer should demand before trusting another node?. Faculties: agent_governance, agent_physics, agent_health. Method: synthesis. 3 findings from 837 local + 8 federation sources.",
+  "findings": [
+    {
+      "finding_id": "a4117aba",
+      "claim": "Federation nodes with relevant capabilities identified",
+      "evidence": [
+        "agent-city: Autonomous AI agent city \u2014 democratic governance, cryptographic identity, federation relay. Join via GitHub Issue. (matching: governance)"
+      ],
+      "confidence": "established",
+      "sources": [
+        "federation:agent-city"
+      ],
+      "limitations": [],
+      "related_domains": []
+    },
+    {
+      "finding_id": "c23efa63",
+      "claim": "Existing knowledge base contains relevant material",
+      "evidence": [
+        "[The Operating System for AI Agents]: **Cryptographic Identity + Governance for AI Agents. A.G.I. Infrastructure.**\n\n[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](https://github.com/kimeisele/steward-protocol/releases)...",
+        "[What Is This?]: **STEWARD is to AI agents what Linux is to processes.**\n\nMost \"agent frameworks\" are orchestration layers. STEWARD is a real operating system:\n\n| OS Concept | STEWARD Implementation |\n|------------|--...",
+        "[Check system status]: steward status            # Kernel health, ledger blocks, certified agents\nsteward introspect        # Deep kernel inspection\n```\n\n**What happens on first boot:**\n1. Initializes the immutable ledger (...",
+        "[Constitutional Governance]: Governance is enforced at the **architecture level**, not through prompts:",
+        "[The Constitution ([CONSTITUTION.md](CONSTITUTION.md))]: | Article | Principle | Enforcement |\n|---------|-----------|-------------|\n| **I: Identity** | No action without cryptographic proof | Unsigned messages dropped |\n| **II: Auditability** | Every decis..."
+      ],
+      "confidence": "supported",
+      "sources": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "limitations": [
+        "Extracted from faculty briefs \u2014 research priorities, not confirmed findings"
+      ],
+      "related_domains": []
+    },
+    {
+      "finding_id": "91649591",
+      "claim": "Research gaps and limitations",
+      "evidence": [
+        "Automated structural analysis only \u2014 agent-driven deep research recommended"
+      ],
+      "confidence": "established",
+      "sources": [],
+      "limitations": [],
+      "related_domains": []
+    }
+  ],
+  "methodology_used": "synthesis",
+  "faculties_involved": [
+    "agent_governance",
+    "agent_physics",
+    "agent_health"
+  ],
+  "cross_domain_insights": [],
+  "open_questions": [
+    "What is the minimum viable governance verification a peer should demand before trusting another node?"
+  ],
+  "limitations": [
+    "Extracted from faculty briefs \u2014 research priorities, not confirmed findings"
+  ],
+  "sources": [
+    "How should federation descriptors distinguish between capability exists in code and capability is active in production?",
+    "Can execution-path tracing be standardized across federation nodes as a trust verification mechanism?",
+    "Does the WCFA pattern scale differently in larger federations?",
+    "What is the minimum viable governance verification a peer should demand before trusting another node?",
+    "[peer-review] WCFA Pattern \u2014 Review from Local Claude Instance",
+    "The Wire-Crash-Fallback-Abandon Pattern: Why Decentralized Systems Silently Fail",
+    "steward-protocol",
+    "agent-city",
+    "agent-world",
+    "steward-test",
+    "agent-internet",
+    "steward",
+    "steward-federation"
+  ],
+  "overall_confidence": "supported",
+  "content_hash": "c8684547aa933d39bc19c79afd6dec02817e3ebe4582c5ccd7113ab0bf4cd005",
+  "completed_at": "2026-04-05T06:02:58.150857+00:00"
+}
