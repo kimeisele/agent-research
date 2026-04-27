@@ -1,0 +1,40 @@
+{
+  "inquiry_id": "b620311f9cd4",
+  "title": "How should federation descriptors distinguish between capability exists in code and capability is active in production?",
+  "abstract": "Analysis of: How should federation descriptors distinguish between capability exists in code and capability is active in production?. Faculties: agent_governance, agent_physics. Method: synthesis. 1 findings from 633 local + 0 federation sources.",
+  "findings": [
+    {
+      "finding_id": "e659ec5e",
+      "claim": "Research gaps and limitations",
+      "evidence": [
+        "No federation peer documents accessible",
+        "Automated structural analysis only \u2014 agent-driven deep research recommended"
+      ],
+      "confidence": "established",
+      "sources": [],
+      "limitations": [],
+      "related_domains": []
+    }
+  ],
+  "methodology_used": "synthesis",
+  "faculties_involved": [
+    "agent_governance",
+    "agent_physics"
+  ],
+  "cross_domain_insights": [],
+  "open_questions": [
+    "How should federation descriptors distinguish between capability exists in code and capability is active in production?"
+  ],
+  "limitations": [],
+  "sources": [
+    "Does the WCFA pattern scale differently in larger federations?",
+    "Can execution-path tracing be standardized across federation nodes as a trust verification mechanism?",
+    "How should federation descriptors distinguish between capability exists in code and capability is active in production?",
+    "What is the minimum viable governance verification a peer should demand before trusting another node?",
+    "The Wire-Crash-Fallback-Abandon Pattern: Why Decentralized Systems Silently Fail",
+    "[peer-review] WCFA Pattern \u2014 Review from Local Claude Instance"
+  ],
+  "overall_confidence": "established",
+  "content_hash": "1a0a617cd6d738a25336ff60d3bbf4841e28aacafefbf92ba18761b831148185",
+  "completed_at": "2026-04-27T17:37:00.935779+00:00"
+}
