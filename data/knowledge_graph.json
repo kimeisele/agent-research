@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": 1,
-    "total_ingestions": 1883
+    "total_ingestions": 1888
   },
   "concepts": [
     {
@@ -3215,7 +3215,7 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:06.003127+00:00",
-      "mention_count": 1567,
+      "mention_count": 1572,
       "source_inquiries": [
         "wcfa-001",
         "gh-2",
@@ -4002,7 +4002,12 @@
         "3e5193920b9f",
         "e913a28dbc46",
         "33a9d62f1745",
-        "e4597c686d99"
+        "e4597c686d99",
+        "d6fd064fa7de",
+        "db54e8af67ae",
+        "b013de8916f9",
+        "42101a657214",
+        "c326e2adaccb"
       ]
     },
     {
@@ -6261,7 +6266,7 @@
       ],
       "description": "",
       "first_seen": "2026-03-15T15:37:06.022712+00:00",
-      "mention_count": 474,
+      "mention_count": 479,
       "source_inquiries": [
         "wcfa-001",
         "gh-2",
@@ -6735,7 +6740,12 @@
         "13152cefe9ae",
         "535de7c50bc2",
         "e913a28dbc46",
-        "33a9d62f1745"
+        "33a9d62f1745",
+        "d6fd064fa7de",
+        "db54e8af67ae",
+        "b013de8916f9",
+        "42101a657214",
+        "c326e2adaccb"
       ]
     },
     {
@@ -19363,7 +19373,7 @@
       ],
       "description": "",
       "first_seen": "2026-03-29T13:07:47.214564+00:00",
-      "mention_count": 785,
+      "mention_count": 790,
       "source_inquiries": [
         "gh-2",
         "ac8d5db720ba",
@@ -20149,7 +20159,12 @@
         "3e5193920b9f",
         "e913a28dbc46",
         "33a9d62f1745",
-        "e4597c686d99"
+        "e4597c686d99",
+        "d6fd064fa7de",
+        "db54e8af67ae",
+        "b013de8916f9",
+        "42101a657214",
+        "c326e2adaccb"
       ]
     },
     {
@@ -20163,7 +20178,7 @@
       ],
       "description": "",
       "first_seen": "2026-03-29T13:07:47.214564+00:00",
-      "mention_count": 785,
+      "mention_count": 790,
       "source_inquiries": [
         "gh-2",
         "ac8d5db720ba",
@@ -20949,7 +20964,12 @@
         "3e5193920b9f",
         "e913a28dbc46",
         "33a9d62f1745",
-        "e4597c686d99"
+        "e4597c686d99",
+        "d6fd064fa7de",
+        "db54e8af67ae",
+        "b013de8916f9",
+        "42101a657214",
+        "c326e2adaccb"
       ]
     },
     {
@@ -20963,7 +20983,7 @@
       ],
       "description": "",
       "first_seen": "2026-03-29T13:07:47.214564+00:00",
-      "mention_count": 785,
+      "mention_count": 790,
       "source_inquiries": [
         "gh-2",
         "ac8d5db720ba",
@@ -21749,7 +21769,12 @@
         "3e5193920b9f",
         "e913a28dbc46",
         "33a9d62f1745",
-        "e4597c686d99"
+        "e4597c686d99",
+        "d6fd064fa7de",
+        "db54e8af67ae",
+        "b013de8916f9",
+        "42101a657214",
+        "c326e2adaccb"
       ]
     },
     {
@@ -21763,7 +21788,7 @@
       ],
       "description": "",
       "first_seen": "2026-03-29T13:07:47.214564+00:00",
-      "mention_count": 785,
+      "mention_count": 790,
       "source_inquiries": [
         "gh-2",
         "ac8d5db720ba",
@@ -22549,7 +22574,12 @@
         "3e5193920b9f",
         "e913a28dbc46",
         "33a9d62f1745",
-        "e4597c686d99"
+        "e4597c686d99",
+        "d6fd064fa7de",
+        "db54e8af67ae",
+        "b013de8916f9",
+        "42101a657214",
+        "c326e2adaccb"
       ]
     },
     {
@@ -53066,16 +53096,22 @@
       "domains": [
         "agent_governance",
         "agent_physics",
-        "agent_health"
+        "agent_health",
+        "cross_domain"
       ],
       "description": "",
       "first_seen": "2026-04-27T14:49:54.922077+00:00",
-      "mention_count": 4,
+      "mention_count": 9,
       "source_inquiries": [
         "be03d665b21d",
         "13cd5a81957b",
         "e913a28dbc46",
-        "33a9d62f1745"
+        "33a9d62f1745",
+        "d6fd064fa7de",
+        "db54e8af67ae",
+        "b013de8916f9",
+        "42101a657214",
+        "c326e2adaccb"
       ]
     }
   ],
@@ -74324,7 +74360,7 @@
       "source": "federation",
       "target": "agent",
       "relation": "co_occurs",
-      "weight": 473.0,
+      "weight": 478.0,
       "evidence": "Federation nodes with relevant capabilities identified",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:46.959990+00:00"
@@ -94952,7 +94988,7 @@
       "source": "structural",
       "target": "automated",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -94961,7 +94997,7 @@
       "source": "structural",
       "target": "driven",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -94970,7 +95006,7 @@
       "source": "structural",
       "target": "agent",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -94979,7 +95015,7 @@
       "source": "structural",
       "target": "recommended",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -94988,7 +95024,7 @@
       "source": "automated",
       "target": "driven",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -94997,7 +95033,7 @@
       "source": "automated",
       "target": "agent",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -95006,7 +95042,7 @@
       "source": "automated",
       "target": "recommended",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -95015,7 +95051,7 @@
       "source": "driven",
       "target": "agent",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -95024,7 +95060,7 @@
       "source": "driven",
       "target": "recommended",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -95033,7 +95069,7 @@
       "source": "agent",
       "target": "recommended",
       "relation": "co_occurs",
-      "weight": 785.0,
+      "weight": 790.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "gh-2",
       "created_at": "2026-03-29T13:07:47.214564+00:00"
@@ -140303,7 +140339,7 @@
       "source": "agent",
       "target": "accessible",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
@@ -140312,7 +140348,7 @@
       "source": "federation",
       "target": "automated",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
@@ -140321,7 +140357,7 @@
       "source": "federation",
       "target": "structural",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
@@ -140330,7 +140366,7 @@
       "source": "federation",
       "target": "recommended",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
@@ -140339,7 +140375,7 @@
       "source": "federation",
       "target": "accessible",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
@@ -140348,7 +140384,7 @@
       "source": "federation",
       "target": "driven",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
@@ -140357,7 +140393,7 @@
       "source": "automated",
       "target": "accessible",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
@@ -140366,7 +140402,7 @@
       "source": "structural",
       "target": "accessible",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
@@ -140375,7 +140411,7 @@
       "source": "recommended",
       "target": "accessible",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
@@ -140384,7 +140420,7 @@
       "source": "accessible",
       "target": "driven",
       "relation": "co_occurs",
-      "weight": 4.0,
+      "weight": 9.0,
       "evidence": "Research gaps and limitations",
       "source_inquiry": "be03d665b21d",
       "created_at": "2026-04-27T14:49:54.922077+00:00"
