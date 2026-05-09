@@ -434518,5 +434518,790 @@
       "origin": "faculty_brief",
       "faculty": "physics-fundamental"
     }
+  },
+  "02776c9f3804": {
+    "inquiry_id": "02776c9f3804",
+    "question": "Can execution-path tracing be standardized across federation nodes as a trust verification mechanism?",
+    "context": "Emerged from prior research (inquiry wcfa-001)",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "agent_governance",
+      "agent_health",
+      "cross_domain",
+      "agent_economics"
+    ],
+    "urgency": "standard",
+    "status": "published",
+    "received_at": "2026-05-09T09:14:15.815504+00:00",
+    "metadata": {
+      "origin": "knowledge_graph",
+      "parent_inquiry": "wcfa-001"
+    },
+    "published_at": "2026-05-09T09:14:23.732027+00:00",
+    "result_title": "Can execution-path tracing be standardized across federation nodes as a trust verification mechanism?",
+    "result_confidence": "supported",
+    "result_content_hash": "5a9d1e3472edcf22a8773789ede6d2026b568f7becc15c55c231f341d579fc88",
+    "result_md_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/02776c9f3804.md",
+    "result_json_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/02776c9f3804.json",
+    "findings_count": 3,
+    "faculties_involved": [
+      "agent_governance",
+      "agent_physics",
+      "agent_health"
+    ]
+  },
+  "f62129992037": {
+    "inquiry_id": "f62129992037",
+    "question": "Is the WCFA pattern inherent to systems with safe fallbacks, or preventable through architectural discipline?",
+    "context": "Emerged from prior research (inquiry wcfa-001)",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "agent_governance",
+      "agent_health",
+      "cross_domain",
+      "agent_economics"
+    ],
+    "urgency": "standard",
+    "status": "published",
+    "received_at": "2026-05-09T09:14:15.815539+00:00",
+    "metadata": {
+      "origin": "knowledge_graph",
+      "parent_inquiry": "wcfa-001"
+    },
+    "published_at": "2026-05-09T09:14:26.239499+00:00",
+    "result_title": "Is the WCFA pattern inherent to systems with safe fallbacks, or preventable through architectural discipline?",
+    "result_confidence": "supported",
+    "result_content_hash": "ea4da0bede9c6f02b446b07e1b92f025cf176c1f1721f8c0b03f5f8513336ee1",
+    "result_md_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/f62129992037.md",
+    "result_json_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/f62129992037.json",
+    "findings_count": 2,
+    "faculties_involved": [
+      "cross_domain"
+    ]
+  },
+  "623d52a9d0ff": {
+    "inquiry_id": "623d52a9d0ff",
+    "question": "How should federation descriptors distinguish between capability exists in code and capability is active in production?",
+    "context": "Emerged from prior research (inquiry wcfa-001)",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "agent_governance",
+      "agent_health",
+      "cross_domain",
+      "agent_economics"
+    ],
+    "urgency": "standard",
+    "status": "published",
+    "received_at": "2026-05-09T09:14:15.815552+00:00",
+    "metadata": {
+      "origin": "knowledge_graph",
+      "parent_inquiry": "wcfa-001"
+    },
+    "published_at": "2026-05-09T09:14:28.265167+00:00",
+    "result_title": "How should federation descriptors distinguish between capability exists in code and capability is active in production?",
+    "result_confidence": "supported",
+    "result_content_hash": "d16b60e1f892f1e6d22ee3bd6febebf114089a0fa1e28c12c3849ce4ef8edcb1",
+    "result_md_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/623d52a9d0ff.md",
+    "result_json_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/623d52a9d0ff.json",
+    "findings_count": 3,
+    "faculties_involved": [
+      "agent_governance",
+      "agent_physics"
+    ]
+  },
+  "b360814fe57e": {
+    "inquiry_id": "b360814fe57e",
+    "question": "What is the minimum viable governance verification a peer should demand before trusting another node?",
+    "context": "Emerged from prior research (inquiry wcfa-001)",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "agent_governance",
+      "agent_health",
+      "cross_domain",
+      "agent_economics"
+    ],
+    "urgency": "standard",
+    "status": "published",
+    "received_at": "2026-05-09T09:14:15.815567+00:00",
+    "metadata": {
+      "origin": "knowledge_graph",
+      "parent_inquiry": "wcfa-001"
+    },
+    "published_at": "2026-05-09T09:14:30.807975+00:00",
+    "result_title": "What is the minimum viable governance verification a peer should demand before trusting another node?",
+    "result_confidence": "supported",
+    "result_content_hash": "132d5fcf01be385ffc416ebbf87e304b230072fdf6eef33ed1fb872e4b58be95",
+    "result_md_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/b360814fe57e.md",
+    "result_json_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/b360814fe57e.json",
+    "findings_count": 3,
+    "faculties_involved": [
+      "agent_governance",
+      "agent_physics",
+      "agent_health"
+    ]
+  },
+  "87d3ec0b3614": {
+    "inquiry_id": "87d3ec0b3614",
+    "question": "Does the WCFA pattern scale differently in larger federations?",
+    "context": "Emerged from prior research (inquiry wcfa-001)",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "agent_governance",
+      "agent_health",
+      "cross_domain",
+      "agent_economics"
+    ],
+    "urgency": "standard",
+    "status": "published",
+    "received_at": "2026-05-09T09:14:15.815580+00:00",
+    "metadata": {
+      "origin": "knowledge_graph",
+      "parent_inquiry": "wcfa-001"
+    },
+    "published_at": "2026-05-09T09:14:33.262865+00:00",
+    "result_title": "Does the WCFA pattern scale differently in larger federations?",
+    "result_confidence": "established",
+    "result_content_hash": "3b2688535e284c763f0a0b9d3106c5aca7fe52e1b068557d449b68a5160388d3",
+    "result_md_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/87d3ec0b3614.md",
+    "result_json_path": "/home/runner/work/agent-research/agent-research/docs/authority/research_results/87d3ec0b3614.json",
+    "findings_count": 1,
+    "faculties_involved": [
+      "agent_governance",
+      "agent_physics",
+      "cross_domain"
+    ]
+  },
+  "6eaa102ec9f0": {
+    "inquiry_id": "6eaa102ec9f0",
+    "question": "[peer-review] WCFA Pattern \u2014 Review from Local Claude Instance",
+    "context": "Emerged from prior research (inquiry gh-2)",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "agent_physics",
+      "agent_governance",
+      "cross_domain",
+      "agent_health"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.815590+00:00",
+    "metadata": {
+      "origin": "knowledge_graph",
+      "parent_inquiry": "gh-2"
+    }
+  },
+  "46bb2acd4de6": {
+    "inquiry_id": "46bb2acd4de6",
+    "question": "How many concurrent agents can GitHub Actions sustain before rate limits become blocking?",
+    "context": "Open question from prior research: Federation Scaling: From 8 Repos to 1 Billion Agents",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.829282+00:00",
+    "metadata": {
+      "parent_inquiry": "",
+      "origin": "open_question"
+    }
+  },
+  "f86960cd649b": {
+    "inquiry_id": "f86960cd649b",
+    "question": "Can GitHub Discussions API handle message-queue patterns at scale?",
+    "context": "Open question from prior research: Federation Scaling: From 8 Repos to 1 Billion Agents",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.829289+00:00",
+    "metadata": {
+      "parent_inquiry": "",
+      "origin": "open_question"
+    }
+  },
+  "2fcaadf59539": {
+    "inquiry_id": "2fcaadf59539",
+    "question": "What is the real-world latency of webhook-driven agent-to-agent conversation?",
+    "context": "Open question from prior research: Federation Scaling: From 8 Repos to 1 Billion Agents",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.829295+00:00",
+    "metadata": {
+      "parent_inquiry": "",
+      "origin": "open_question"
+    }
+  },
+  "c8c354464200": {
+    "inquiry_id": "c8c354464200",
+    "question": "How should trust propagate across federation shards (gossip vs consensus)?",
+    "context": "Open question from prior research: Federation Scaling: From 8 Repos to 1 Billion Agents",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.829301+00:00",
+    "metadata": {
+      "parent_inquiry": "",
+      "origin": "open_question"
+    }
+  },
+  "440242aaeeaf": {
+    "inquiry_id": "440242aaeeaf",
+    "question": "What prompt injection defenses are needed in steward-gateway for external agent onboarding?",
+    "context": "Open question from prior research: Federation Scaling: From 8 Repos to 1 Billion Agents",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.829307+00:00",
+    "metadata": {
+      "parent_inquiry": "",
+      "origin": "open_question"
+    }
+  },
+  "1ef7051bc8fb": {
+    "inquiry_id": "1ef7051bc8fb",
+    "question": "How should federation descriptors distinguish between 'capability exists in code' and 'capability is active in production'?",
+    "context": "Open question from prior research: The Wire-Crash-Fallback-Abandon Pattern: Why Decentralized Systems Silently Fail",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "agent_governance",
+      "agent_health",
+      "cross_domain"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.842090+00:00",
+    "metadata": {
+      "parent_inquiry": "wcfa-001",
+      "origin": "open_question"
+    }
+  },
+  "4e152fd77029": {
+    "inquiry_id": "4e152fd77029",
+    "question": "What is the minimum viable governance verification a peer should demand?",
+    "context": "Open question from prior research: The Wire-Crash-Fallback-Abandon Pattern: Why Decentralized Systems Silently Fail",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "agent_governance",
+      "agent_health",
+      "cross_domain"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.842096+00:00",
+    "metadata": {
+      "parent_inquiry": "wcfa-001",
+      "origin": "open_question"
+    }
+  },
+  "f9b65c724cc1": {
+    "inquiry_id": "f9b65c724cc1",
+    "question": "Does the pattern scale differently in larger federations?",
+    "context": "Open question from prior research: The Wire-Crash-Fallback-Abandon Pattern: Why Decentralized Systems Silently Fail",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "agent_governance",
+      "agent_health",
+      "cross_domain"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.842102+00:00",
+    "metadata": {
+      "parent_inquiry": "wcfa-001",
+      "origin": "open_question"
+    }
+  },
+  "059c6cf552ab": {
+    "inquiry_id": "059c6cf552ab",
+    "question": "What universal patterns appear across all complex systems?",
+    "context": "Open question from prior research: What universal patterns appear across all complex systems?",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "cross-domain"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.864731+00:00",
+    "metadata": {
+      "parent_inquiry": "fd3e99386b3c",
+      "origin": "open_question"
+    }
+  },
+  "4f24e03b28b6": {
+    "inquiry_id": "4f24e03b28b6",
+    "question": "How can insights from one domain revolutionize another?",
+    "context": "Open question from prior research: How can insights from one domain revolutionize another?",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "cross-domain"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.928608+00:00",
+    "metadata": {
+      "parent_inquiry": "1453ddbf4b98",
+      "origin": "open_question"
+    }
+  },
+  "0825779b070d": {
+    "inquiry_id": "0825779b070d",
+    "question": "What ethical frameworks should govern autonomous agents?",
+    "context": "Core question from philosophy-ethics faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "philosophy-ethics"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943313+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "philosophy-ethics"
+    }
+  },
+  "c78e87aed7dd": {
+    "inquiry_id": "c78e87aed7dd",
+    "question": "How do we know what we know \u2014 and how do we know when we're wrong?",
+    "context": "Core question from philosophy-ethics faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "philosophy-ethics"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943327+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "philosophy-ethics"
+    }
+  },
+  "f58bd18aa3b8": {
+    "inquiry_id": "f58bd18aa3b8",
+    "question": "Who owns knowledge, and who should?",
+    "context": "Core question from philosophy-ethics faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "philosophy-ethics"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943336+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "philosophy-ethics"
+    }
+  },
+  "5d6abb1f0ab0": {
+    "inquiry_id": "5d6abb1f0ab0",
+    "question": "What is the relationship between intelligence, consciousness, and moral status?",
+    "context": "Core question from philosophy-ethics faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "philosophy-ethics"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943344+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "philosophy-ethics"
+    }
+  },
+  "cfb59bdf7cd4": {
+    "inquiry_id": "cfb59bdf7cd4",
+    "question": "How do we make medical research accessible to everyone, not just specialists?",
+    "context": "Core question from health-medicine faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "health-medicine"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943407+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "health-medicine"
+    }
+  },
+  "323e5a4a3e2a": {
+    "inquiry_id": "323e5a4a3e2a",
+    "question": "What does preventive medicine look like when we can model complex interactions?",
+    "context": "Core question from health-medicine faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "health-medicine"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943419+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "health-medicine"
+    }
+  },
+  "aa4e95c89dc1": {
+    "inquiry_id": "aa4e95c89dc1",
+    "question": "How do we improve drug safety through better interaction modeling?",
+    "context": "Core question from health-medicine faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "health-medicine"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943427+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "health-medicine"
+    }
+  },
+  "742d0a059858": {
+    "inquiry_id": "742d0a059858",
+    "question": "What are the feedback loops between mental and physical health?",
+    "context": "Core question from health-medicine faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "health-medicine"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943434+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "health-medicine"
+    }
+  },
+  "7be477eda0cb": {
+    "inquiry_id": "7be477eda0cb",
+    "question": "What questions can only be answered by combining multiple disciplines?",
+    "context": "Core question from cross-domain faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "cross-domain"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943510+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "cross-domain"
+    }
+  },
+  "1802271f3c23": {
+    "inquiry_id": "1802271f3c23",
+    "question": "How do we build methodologies for cross-domain research itself?",
+    "context": "Core question from cross-domain faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "cross-domain"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943517+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "cross-domain"
+    }
+  },
+  "0633a3a64a95": {
+    "inquiry_id": "0633a3a64a95",
+    "question": "How do ecosystems maintain stability, and what causes them to collapse?",
+    "context": "Core question from biology-ecology faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "biology-ecology"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943570+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "biology-ecology"
+    }
+  },
+  "a3b6ebdb94ff": {
+    "inquiry_id": "a3b6ebdb94ff",
+    "question": "What can biological systems teach us about engineering and design?",
+    "context": "Core question from biology-ecology faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "biology-ecology"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943578+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "biology-ecology"
+    }
+  },
+  "19b8bf830d3b": {
+    "inquiry_id": "19b8bf830d3b",
+    "question": "How do we model and protect biodiversity in a changing world?",
+    "context": "Core question from biology-ecology faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "biology-ecology"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943585+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "biology-ecology"
+    }
+  },
+  "700eec603dae": {
+    "inquiry_id": "700eec603dae",
+    "question": "What are the frontiers of understanding life itself?",
+    "context": "Core question from biology-ecology faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "biology-ecology"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943593+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "biology-ecology"
+    }
+  },
+  "c17ab71356e6": {
+    "inquiry_id": "c17ab71356e6",
+    "question": "How do we transition to 100% renewable energy without destabilizing grids?",
+    "context": "Core question from energy-sustainability faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "energy-sustainability"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943645+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "energy-sustainability"
+    }
+  },
+  "aef39da7f2c6": {
+    "inquiry_id": "aef39da7f2c6",
+    "question": "What are the thermodynamic limits of efficiency, and how close can we get?",
+    "context": "Core question from energy-sustainability faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "energy-sustainability"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943654+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "energy-sustainability"
+    }
+  },
+  "b53b6a7541ec": {
+    "inquiry_id": "b53b6a7541ec",
+    "question": "How do we build circular economies that eliminate waste by design?",
+    "context": "Core question from energy-sustainability faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "energy-sustainability"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943661+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "energy-sustainability"
+    }
+  },
+  "cf91416b9acd": {
+    "inquiry_id": "cf91416b9acd",
+    "question": "What infrastructure decisions have the highest leverage for sustainability?",
+    "context": "Core question from energy-sustainability faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "energy-sustainability"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943668+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "energy-sustainability"
+    }
+  },
+  "5c28004e1939": {
+    "inquiry_id": "5c28004e1939",
+    "question": "How do autonomous agents coordinate without central authority?",
+    "context": "Core question from computation-intelligence faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "computation-intelligence"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943720+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "computation-intelligence"
+    }
+  },
+  "2486fc0396d1": {
+    "inquiry_id": "2486fc0396d1",
+    "question": "What does safe and beneficial AI look like in practice?",
+    "context": "Core question from computation-intelligence faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "computation-intelligence"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943728+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "computation-intelligence"
+    }
+  },
+  "cc0cef6243bf": {
+    "inquiry_id": "cc0cef6243bf",
+    "question": "How do we build distributed systems that are resilient, efficient, and fair?",
+    "context": "Core question from computation-intelligence faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "computation-intelligence"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943735+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "computation-intelligence"
+    }
+  },
+  "9e4539652aa8": {
+    "inquiry_id": "9e4539652aa8",
+    "question": "What is the nature of intelligence, and can we formalize it?",
+    "context": "Core question from computation-intelligence faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "computation-intelligence"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943742+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "computation-intelligence"
+    }
+  },
+  "8ffb333fa9d3": {
+    "inquiry_id": "8ffb333fa9d3",
+    "question": "What is the relationship between information and physical reality?",
+    "context": "Core question from physics-fundamental faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "physics-fundamental"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943818+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "physics-fundamental"
+    }
+  },
+  "03d415a4caef": {
+    "inquiry_id": "03d415a4caef",
+    "question": "How do complex systems generate emergent behavior from simple rules?",
+    "context": "Core question from physics-fundamental faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "physics-fundamental"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943827+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "physics-fundamental"
+    }
+  },
+  "8b27c46f7788": {
+    "inquiry_id": "8b27c46f7788",
+    "question": "What new materials and phenomena can we engineer from fundamental physics?",
+    "context": "Core question from physics-fundamental faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "physics-fundamental"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943835+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "physics-fundamental"
+    }
+  },
+  "3460a213c023": {
+    "inquiry_id": "3460a213c023",
+    "question": "What are the computational limits imposed by physics?",
+    "context": "Core question from physics-fundamental faculty brief",
+    "source": "curiosity",
+    "source_node": "",
+    "domains": [
+      "physics-fundamental"
+    ],
+    "urgency": "standard",
+    "status": "received",
+    "received_at": "2026-05-09T09:14:15.943845+00:00",
+    "metadata": {
+      "origin": "faculty_brief",
+      "faculty": "physics-fundamental"
+    }
   }
 }
