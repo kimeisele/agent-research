@@ -29,7 +29,7 @@ jobs:
 
       - name: Run research engine cycle
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
         run: |
           MAX="${{ github.event.inputs.max_inquiries || '5' }}"
           echo "Running research engine cycle (max: $MAX inquiries)"
