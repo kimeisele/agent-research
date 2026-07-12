@@ -58,11 +58,6 @@ jobs:
           Cycle triggered at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:${GITHUB_REF_NAME}
 
-      - name: Inject node identity from secret
-        run: |
-          mkdir -p data/federation
-          printf '%s' "${{ secrets.NODE_PRIVATE_KEY }}" > data/federation/.node_keys.json
-
       - name: Install nadi-kit (federation heartbeat)
         env:
           GH_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
@@ -71,6 +66,7 @@ jobs:
 
       - name: Run NADI heartbeat cycle
         env:
+          NODE_PRIVATE_KEY: ${{ secrets.NODE_PRIVATE_KEY }}
           GH_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
         run: |
@@ -126,6 +122,7 @@ jobs:
       - name: Final NADI sync
         if: always()
         env:
+          NODE_PRIVATE_KEY: ${{ secrets.NODE_PRIVATE_KEY }}
           GH_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.FEDERATION_PAT || secrets.GITHUB_TOKEN }}
         run: |
