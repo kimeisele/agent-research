@@ -227,3 +227,108 @@ class TestDeliveryIdempotencyIntegration:
         r2 = req2.request_reviews(_make_result("inq-001"), ["hermes-sankhya-25"])
         assert len(r2) == 0
         assert len(nadi2.created_issues) == 0
+
+
+# ---------------------------------------------------------------------------
+# Query format — _build_search_query contract
+# ---------------------------------------------------------------------------
+
+class TestSearchQueryContract:
+    """Verify the GitHub search query has no contradictory state filters
+    and contains the required qualifiers."""
+
+    def test_query_omits_state_filters(self,):
+        from agent_research.nadi import NadiTransport
+        nadi = NadiTransport(token="fake")
+        q = nadi._build_search_query("kimeisele/hermes-sankhya-25", "<!-- marker -->")
+        assert "state:open" not in q, f"unexpected state:open in: {q}"
+        assert "state:closed" not in q, f"unexpected state:closed in: {q}"
+
+    def test_query_contains_required_qualifiers(self):
+        from agent_research.nadi import NadiTransport
+        nadi = NadiTransport(token="fake")
+        q = nadi._build_search_query("kimeisele/hermes-sankhya-25", "<!-- marker -->")
+        assert "repo:kimeisele/hermes-sankhya-25" in q
+        assert "in:body" in q
+        assert "type:issue" in q
+
+
+# ---------------------------------------------------------------------------
+# Approximate match rejection — FakeNadi + local body verification
+# ---------------------------------------------------------------------------
+
+class TestApproximateMatchRejection:
+    """GitHub search can return approximate results.  The local body
+    verification in search_issues must filter those out."""
+
+    def test_spurious_hit_without_exact_marker_is_ignored(self):
+        """A search result whose body does NOT contain the exact marker
+        must not block a legitimate delivery."""
+        # The real marker for inq-001 on hermes-sankhya-25:
+        real_marker = _delivery_marker(_delivery_key("hermes-sankhya-25", "inq-001"))
+        # A spurious issue that GitHub search returned but does NOT
+        # actually contain the real marker:
+        spurious_body = (
+            "## Peer Review Request from agent-research\n\n"
+            "**Inquiry ID:** some-other-inquiry\n"
+        )
+        # The FakeNadi search_issues applies local body verification,
+        # so this spurious hit should be filtered out.
+        nadi = _FakeNadi(existing_issues=[{"number": 99, "body": spurious_body}])
+        requester = PeerReviewRequester(nadi)
+        result = _make_result("inq-001")
+
+        results = requester.request_reviews(result, ["hermes-sankhya-25"])
+
+        # The spurious hit does not contain the real marker, so the
+        # delivery must proceed.
+        assert len(results) == 1, "spurious search hit should not block delivery"
+        assert len(nadi.created_issues) == 1
+        assert real_marker in nadi.created_issues[0]["body"]
+
+
+# ---------------------------------------------------------------------------
+# Workflow concurrency contract
+# ---------------------------------------------------------------------------
+
+class TestHeartbeatWorkflowContract:
+    """Verify the research-heartbeat workflow defines a stable concurrency
+    group that prevents concurrent executions."""
+
+    def test_heartbeat_defines_concurrency_group(self):
+        import json, subprocess
+        from pathlib import Path
+
+        # Resolve the actual repo root (handle /tmp symlinks on macOS)
+        repo_root = Path(subprocess.check_output(
+            ["git", "rev-parse", "--show-toplevel"],
+            cwd=Path(__file__).resolve().parents[1], text=True,
+        ).strip())
+        wf_path = repo_root / ".github" / "workflows" / "research-heartbeat.yml"
+
+        # Use json + python parsing to avoid yaml dep — the file is
+        # simple enough for line-based inspection.
+        lines = wf_path.read_text().splitlines()
+        # Find concurrency group line
+        group_line = None
+        cancel_line = None
+        in_concurrency = False
+        for i, line in enumerate(lines):
+            stripped = line.strip()
+            if stripped == "concurrency:":
+                in_concurrency = True
+            elif in_concurrency and stripped.startswith("group:"):
+                group_line = stripped
+            elif in_concurrency and stripped.startswith("cancel-in-progress:"):
+                cancel_line = stripped
+            elif in_concurrency and not stripped.startswith(" ") and stripped:
+                break  # end of concurrency block
+
+        assert group_line is not None, "workflow must define concurrency group"
+        assert "agent-research-heartbeat" in group_line, (
+            f"expected stable concurrency group, got: {group_line}"
+        )
+        assert cancel_line is not None, "cancel-in-progress must be defined"
+        assert "false" in cancel_line, (
+            f"cancel-in-progress must be false, got: {cancel_line}"
+        )

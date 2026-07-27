@@ -91,20 +91,30 @@ class NadiTransport:
             return []
         return issues
 
+    def _build_search_query(self, repo: str, body_contains: str) -> str:
+        """Build a GitHub search query for dedup.  Exposed for testing."""
+        return f'repo:{repo} "{body_contains}" in:body type:issue'
+
     def search_issues(self, repo: str, body_contains: str) -> list[dict[str, Any]] | None:
         """Search open and closed issues in a repo for a body substring.
 
-        Returns a list of matching issues, or None on API failure.
-        Used for delivery-key dedup lookups.
+        Omits ``state:`` so both open and closed issues are searched.
+        Applies *local* body verification on every returned item —
+        GitHub search may produce approximate results that must be
+        rejected when they do not contain the exact marker.
+
+        Returns a list of locally-verified matching issues, or None
+        on API failure.
         """
         from urllib.parse import quote
-        q = f'repo:{repo} "{body_contains}" in:body state:open state:closed type:issue'
+        q = self._build_search_query(repo, body_contains)
         path = f"/search/issues?q={quote(q)}&per_page=10&sort=created&order=desc"
         result = self._api(path)
         if result is None:
             return None
         if isinstance(result, dict) and "items" in result:
-            return result["items"]
+            return [item for item in result["items"]
+                    if body_contains in (item.get("body") or "")]
         return []
 
     def _create_issue(self, repo: str, title: str, body: str,

@@ -10,6 +10,10 @@ on:
         required: false
         default: "5"
 
+concurrency:
+  group: agent-research-heartbeat
+  cancel-in-progress: false
+
 permissions:
   contents: write
   issues: read
