@@ -91,6 +91,22 @@ class NadiTransport:
             return []
         return issues
 
+    def search_issues(self, repo: str, body_contains: str) -> list[dict[str, Any]] | None:
+        """Search open and closed issues in a repo for a body substring.
+
+        Returns a list of matching issues, or None on API failure.
+        Used for delivery-key dedup lookups.
+        """
+        from urllib.parse import quote
+        q = f'repo:{repo} "{body_contains}" in:body state:open state:closed type:issue'
+        path = f"/search/issues?q={quote(q)}&per_page=10&sort=created&order=desc"
+        result = self._api(path)
+        if result is None:
+            return None
+        if isinstance(result, dict) and "items" in result:
+            return result["items"]
+        return []
+
     def _create_issue(self, repo: str, title: str, body: str,
                        labels: list[str] | None = None) -> dict[str, Any] | None:
         data: dict[str, Any] = {"title": title, "body": body}

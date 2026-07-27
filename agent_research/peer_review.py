@@ -195,73 +195,47 @@ class ReviewLedger:
         }
 
 
-class DeliveryLedger:
-    """Durable dedup ledger for Nadi review-request delivery.
+# ---------------------------------------------------------------------------
+# Delivery dedup — marker-based remote idempotency
+# ---------------------------------------------------------------------------
 
-    Prevents duplicate review-request issues from being created on the
-    same target repository for the same inquiry.  Each delivery key is
-    recorded once and never expired — heartbeat re-runs become NOOPs
-    for already-delivered messages.
+DELIVERY_MARKER = "nadi-delivery-key"
 
-    Key format: ``{target_repo}:review-request:{inquiry_id}``
-    """
+def _delivery_key(target_repo: str, inquiry_id: str) -> str:
+    """Deterministic dedup key: {target_repo}:review-request:{inquiry_id}."""
+    return f"{target_repo}:review-request:{inquiry_id}"
 
-    def __init__(self, path: Path):
-        self.path = path
-        self._keys: set[str] = set()
-        self._load()
-
-    def _load(self) -> None:
-        if not self.path.exists():
-            return
-        try:
-            data = json.loads(self.path.read_text())
-            self._keys = set(data.get("delivered", []))
-        except (json.JSONDecodeError, OSError) as exc:
-            logger.warning("Delivery ledger load failed: %s", exc)
-
-    def save(self) -> None:
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        data = {
-            "delivered": sorted(self._keys),
-            "count": len(self._keys),
-            "last_updated": datetime.now(timezone.utc).isoformat(),
-        }
-        self.path.write_text(json.dumps(data, indent=2) + "\n")
-
-    def has_been_delivered(self, target_repo: str, inquiry_id: str) -> bool:
-        """Check whether a review-request has already been sent."""
-        key = f"{target_repo}:review-request:{inquiry_id}"
-        return key in self._keys
-
-    def record_delivery(self, target_repo: str, inquiry_id: str) -> None:
-        """Record that a review-request has been delivered."""
-        key = f"{target_repo}:review-request:{inquiry_id}"
-        self._keys.add(key)
-
-    def __len__(self) -> int:
-        return len(self._keys)
+def _delivery_marker(key: str) -> str:
+    """Hidden HTML comment carrying the delivery key."""
+    return f"<!-- {DELIVERY_MARKER}: {key} -->"
 
 
 class PeerReviewRequester:
     """Request peer review from federation nodes.
 
     After MOKSHA publishes, this creates review-request issues on
-    peer repos. The peer's agent reads the result and posts a review
-    back on agent-research.
+    peer repos.  Idempotency is guaranteed via a hidden delivery-key
+    marker in each issue body.  Before creating a new issue the
+    requester searches the target repository (open *and* closed) for
+    any existing issue that contains the same marker — if one is
+    found the delivery is skipped.
+
+    Dedup does **not** depend on an optional constructor argument or
+    ephemeral local state.  It is always active for every caller.
     """
 
-    def __init__(self, nadi: NadiTransport, delivery_ledger: DeliveryLedger | None = None):
+    def __init__(self, nadi: NadiTransport):
         self.nadi = nadi
-        self._ledger = delivery_ledger
         self._skipped: list[str] = []
 
     def request_reviews(self, result: ResearchResult, peer_repos: list[str]) -> list[dict]:
         """Send review requests to peer nodes.
 
         Creates an issue on each peer repo with the result summary
-        and a link to the full document.
+        and a link to the full document.  Issues already delivered
+        (matching delivery key) are skipped.
         """
+        self._skipped.clear()
         doc_url = (
             f"https://github.com/kimeisele/agent-research/blob/main/"
             f"docs/authority/research_results/{result.inquiry_id}.md"
@@ -271,7 +245,7 @@ class PeerReviewRequester:
             f"docs/authority/research_results/{result.inquiry_id}.json"
         )
 
-        body = (
+        body_prefix = (
             f"## Peer Review Request from agent-research\n\n"
             f"**Inquiry ID:** {result.inquiry_id}\n"
             f"**Title:** {result.title}\n"
@@ -283,14 +257,14 @@ class PeerReviewRequester:
         )
 
         for f in result.findings[:5]:
-            body += f"- **[{f.confidence.value}]** {f.claim}\n"
+            body_prefix += f"- **[{f.confidence.value}]** {f.claim}\n"
 
         if result.open_questions:
-            body += f"\n### Open Questions\n"
+            body_prefix += f"\n### Open Questions\n"
             for q in result.open_questions[:3]:
-                body += f"- {q}\n"
+                body_prefix += f"- {q}\n"
 
-        body += (
+        body_suffix = (
             f"\n### Review Protocol\n"
             f"To review this result, create an issue on "
             f"[agent-research](https://github.com/kimeisele/agent-research/issues/new) "
@@ -317,22 +291,34 @@ class PeerReviewRequester:
 
         results = []
         for repo in peer_repos:
-            if self._ledger is not None and self._ledger.has_been_delivered(repo, result.inquiry_id):
+            key = _delivery_key(repo, result.inquiry_id)
+            marker = _delivery_marker(key)
+
+            # Check remote dedup state.  Fail-closed: do NOT create when
+            # the lookup fails (e.g. network error).
+            existing = self.nadi.search_issues(
+                repo=f"kimeisele/{repo}",
+                body_contains=marker,
+            )
+            if existing is None:
+                logger.warning(
+                    "  Dedup lookup failed for %s — refusing delivery (fail-closed)", repo)
                 self._skipped.append(repo)
-                logger.debug("  Skipping %s (already delivered inquiry %s)", repo, result.inquiry_id)
+                continue
+            if existing:
+                logger.debug("  Skipping %s (delivery key %s already present)", repo, key)
+                self._skipped.append(repo)
                 continue
 
+            full_body = marker + "\n\n" + body_prefix + body_suffix
             result_data = self.nadi._create_issue(
                 repo=f"kimeisele/{repo}",
                 title=f"[review-request] {result.title[:70]}",
-                body=body,
+                body=full_body,
                 labels=["review-request", "federation-nadi"],
             )
             if result_data:
                 results.append(result_data)
-                if self._ledger is not None:
-                    self._ledger.record_delivery(repo, result.inquiry_id)
-                    self._ledger.save()
                 logger.info("  Review requested from %s (issue #%s)",
                            repo, result_data.get("number", "?"))
         return results
