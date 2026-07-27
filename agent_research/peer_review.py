@@ -195,6 +195,54 @@ class ReviewLedger:
         }
 
 
+class DeliveryLedger:
+    """Durable dedup ledger for Nadi review-request delivery.
+
+    Prevents duplicate review-request issues from being created on the
+    same target repository for the same inquiry.  Each delivery key is
+    recorded once and never expired — heartbeat re-runs become NOOPs
+    for already-delivered messages.
+
+    Key format: ``{target_repo}:review-request:{inquiry_id}``
+    """
+
+    def __init__(self, path: Path):
+        self.path = path
+        self._keys: set[str] = set()
+        self._load()
+
+    def _load(self) -> None:
+        if not self.path.exists():
+            return
+        try:
+            data = json.loads(self.path.read_text())
+            self._keys = set(data.get("delivered", []))
+        except (json.JSONDecodeError, OSError) as exc:
+            logger.warning("Delivery ledger load failed: %s", exc)
+
+    def save(self) -> None:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        data = {
+            "delivered": sorted(self._keys),
+            "count": len(self._keys),
+            "last_updated": datetime.now(timezone.utc).isoformat(),
+        }
+        self.path.write_text(json.dumps(data, indent=2) + "\n")
+
+    def has_been_delivered(self, target_repo: str, inquiry_id: str) -> bool:
+        """Check whether a review-request has already been sent."""
+        key = f"{target_repo}:review-request:{inquiry_id}"
+        return key in self._keys
+
+    def record_delivery(self, target_repo: str, inquiry_id: str) -> None:
+        """Record that a review-request has been delivered."""
+        key = f"{target_repo}:review-request:{inquiry_id}"
+        self._keys.add(key)
+
+    def __len__(self) -> int:
+        return len(self._keys)
+
+
 class PeerReviewRequester:
     """Request peer review from federation nodes.
 
@@ -203,8 +251,10 @@ class PeerReviewRequester:
     back on agent-research.
     """
 
-    def __init__(self, nadi: NadiTransport):
+    def __init__(self, nadi: NadiTransport, delivery_ledger: DeliveryLedger | None = None):
         self.nadi = nadi
+        self._ledger = delivery_ledger
+        self._skipped: list[str] = []
 
     def request_reviews(self, result: ResearchResult, peer_repos: list[str]) -> list[dict]:
         """Send review requests to peer nodes.
@@ -267,6 +317,11 @@ class PeerReviewRequester:
 
         results = []
         for repo in peer_repos:
+            if self._ledger is not None and self._ledger.has_been_delivered(repo, result.inquiry_id):
+                self._skipped.append(repo)
+                logger.debug("  Skipping %s (already delivered inquiry %s)", repo, result.inquiry_id)
+                continue
+
             result_data = self.nadi._create_issue(
                 repo=f"kimeisele/{repo}",
                 title=f"[review-request] {result.title[:70]}",
@@ -275,6 +330,9 @@ class PeerReviewRequester:
             )
             if result_data:
                 results.append(result_data)
+                if self._ledger is not None:
+                    self._ledger.record_delivery(repo, result.inquiry_id)
+                    self._ledger.save()
                 logger.info("  Review requested from %s (issue #%s)",
                            repo, result_data.get("number", "?"))
         return results
